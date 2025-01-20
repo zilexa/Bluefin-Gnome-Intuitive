@@ -159,7 +159,7 @@ wget -P $HOME/Downloads/ https://raw.githubusercontent.com/tonikelope/megadown/r
 /bin/bash $HOME/Downloads/megadown 'https://mega.nz/#!u4p02JCC!HnJOVyK8TYDqEyVXLkwghDLKlKfIq0kOlX6SPxH53u0'
 # remove the helper script
 rm $HOME/Downloads/megadown
-rm $HOME/Downloads/.megadown
+rm -r $HOME/Downloads/.megadown
 # Extract to systems font folder
 mkdir -p $HOME/.local/share/fonts
 tar -xvf $HOME/Downloads/fonts-office365.tar.xz -C $HOME/.local/share/fonts
