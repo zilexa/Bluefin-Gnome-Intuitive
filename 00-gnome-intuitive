@@ -2,7 +2,7 @@
 # Extensions
 enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'blur-my-shell@aunetx', 'gsconnect@andyholmes.github.io', 'tailscale@joaophi.github.com', 'search-light@icedman.github.com', 'allowlockedremotedesktop@kamens.us', 'arcmenu@arcmenu.com', 'BingWallpaper@ineffable-gmail.com', 'custom-hot-corners-extended@G-dH.github.com', 'dash-to-panel@jderose9.github.com', 'gtk4-ding@smedius.gitlab.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com']
 # Dash (Dash-to-Panel) pinned apps
-favorite-apps=['org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'org.libreoffice.LibreOffice.writer.desktop', 'org.gnome.Calculator.desktop', 'org.xfce.mousepad.desktop']
+favorite-apps=['org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'org.xfce.mousepad.desktop', 'org.gnome.Calculator.desktop']
 
 [org/gnome/settings-daemon/plugins/power]
 ambient-enabled=true
@@ -17,7 +17,7 @@ idle-delay=uint32 900
 
 [org/gnome/desktop/interface]
 color-scheme='prefer-dark'
-gtk-theme='Adwaita-dark'
+gtk-theme='Adwaita'
 icon-theme='adwaita'
 show-battery-percentage=true
 text-scaling-factor=1.0
@@ -69,7 +69,7 @@ start-corner='bottom-left'
 
 # Extension: Arcmenu
 [org/gnome/shell/extensions/arcmenu]
-pinned-apps=[{'id': 'org.mozilla.firefox.desktop'}, {'id': 'org.onlyoffice.desktopeditors.desktop'}, {'id': 'org.xfce.mousepad.desktop'}, {'name': 'Calculator', 'id': 'org.gnome.Calculator.desktop'}, {'name': 'Pinta Image Editor', 'id': 'com.github.PintaProject.Pinta.desktop'}, {'id': 'org.gimp.GIMP.desktop'}, {'name': 'LosslessCut', 'id': 'no.mifi.losslesscut.desktop'}, {'id': 'org.audacityteam.Audacity.desktop'}, {'id': 'org.gnome.Connections.desktop'}]
+pinned-apps=[{'id': 'org.mozilla.firefox.desktop'}, {'id': 'org.onlyoffice.desktopeditors.desktop'}, {'id': '3593608b-8722-4917-a1f7-9ed8c58c5ff5', 'name': 'Office', 'isFolder': 'true'}, {'id': 'simple-scan.desktop'}, {'id': 'org.xfce.mousepad.desktop'}, {'name': 'Calculator', 'id': 'org.gnome.Calculator.desktop'}, {'id': 'org.gimp.GIMP.desktop'}, {'name': 'LosslessCut', 'id': 'no.mifi.losslesscut.desktop'}, {'id': 'fr.handbrake.ghb.desktop'}, {'id': 'org.audacityteam.Audacity.desktop'}, {'id': 'org.gnome.Connections.desktop'}]
 application-shortcuts=[{'name': 'Settings', 'icon': 'org.gnome.Settings', 'id': 'org.gnome.Settings.desktop'}, {'name': 'Tweaks', 'icon': 'org.gnome.tweaks', 'id': 'org.gnome.tweaks.desktop'}, {'name': 'Extensions', 'icon': 'com.mattjakeman.ExtensionManager', 'id': 'com.mattjakeman.ExtensionManager.desktop'}, {'name': 'Separator', 'icon': 'list-remove-symbolic', 'id': 'ArcMenu_Separator'}, {'name': 'Software', 'icon': 'org.gnome.Software', 'id': 'ArcMenu_Software'}, {'name': 'Separator', 'icon': 'list-remove-symbolic', 'id': 'ArcMenu_Separator'}, {'id': 'io.missioncenter.MissionCenter.desktop'}, {'id': 'org.gnome.Ptyxis.desktop'}]
 default-menu-view-redmond='Pinned_Apps'
 alphabetize-all-programs=true
@@ -89,6 +89,9 @@ show-bookmarks=false
 show-external-devices=true
 show-hidden-recent-files=false
 vert-separator=true
+# Extension: Arcmenu (pinned apps folder)
+[org/gnome/shell/extensions/arcmenu/pinned-apps-folders/3593608b-8722-4917-a1f7-9ed8c58c5ff5]
+pinned-apps=[{'id': 'org.libreoffice.LibreOffice.writer.desktop'}, {'id': 'org.libreoffice.LibreOffice.calc.desktop'}, {'id': 'org.libreoffice.LibreOffice.impress.desktop'}, {'id': 'org.libreoffice.LibreOffice.base.desktop'}, {'id': 'org.libreoffice.LibreOffice.draw.desktop'}]
 
 # Extension: Dash-to-Panel configuration
 [org/gnome/shell/extensions/dash-to-panel]
