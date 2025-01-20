@@ -67,14 +67,12 @@ night-light-schedule-to=8.75
 show-home=false
 start-corner='bottom-left'
 
-# Extension: Arcmenu pinned apps
+# Extension: Arcmenu
 [org/gnome/shell/extensions/arcmenu]
-pinned-app-list=['Files', '', 'nemo.desktop', 'Firefox', '', 'firefox.desktop', 'ONLYOFFICE Desktop Editors', '', 'org.onlyoffice.desktopeditors.desktop', 'Text Editor', '', 'xed.desktop', 'Calculator', '', 'org.gnome.Calculator.desktop', 'digiKam', '', 'org.kde.digikam.desktop', 'Pinta Image Editor', '', 'com.github.PintaProject.Pinta.desktop', 'GNU Image Manipulation Program', '', 'org.gimp.GIMP.desktop', 'Tenacity', '', 'org.tenacityaudio.Tenacity.desktop', 'HandBrake', '', 'fr.handbrake.ghb.desktop', 'LosslessCut', '', 'no.mifi.losslesscut.desktop', 'Shotcut', '', 'org.shotcut.Shotcut.desktop', 'Connections', '', 'org.gnome.Connections.desktop', 'BleachBit', '', 'org.bleachbit.BleachBit.desktop', 'LibreOffice Writer', '', 'org.libreoffice.LibreOffice.writer.desktop', 'LibreOffice Calc', '', 'org.libreoffice.LibreOffice.calc.desktop', 'LibreOffice Impress', '', 'org.libreoffice.LibreOffice.impress.desktop']
-# Arcmenu config
-[org/gnome/shell/extensions/arcmenu]
-alphabetize-all-programs=true
-application-shortcuts-list=[['Software', 'org.gnome.Software', 'ArcMenu_Software'], ['Settings', 'org.gnome.Settings', 'org.gnome.Settings.desktop'], ['Tweaks', 'org.gnome.tweaks', 'org.gnome.tweaks.desktop'], ['Extensions', 'com.mattjakeman.ExtensionManager', 'com.mattjakeman.ExtensionManager.desktop'], ['Terminal', 'org.gnome.Terminal', 'org.gnome.Terminal.desktop']]
+pinned-apps=[{'id': 'org.mozilla.firefox.desktop'}, {'id': 'org.onlyoffice.desktopeditors.desktop'}, {'id': 'org.xfce.mousepad.desktop'}, {'name': 'Calculator', 'id': 'org.gnome.Calculator.desktop'}, {'name': 'Pinta Image Editor', 'id': 'com.github.PintaProject.Pinta.desktop'}, {'id': 'org.gimp.GIMP.desktop'}, {'name': 'LosslessCut', 'id': 'no.mifi.losslesscut.desktop'}, {'id': 'org.audacityteam.Audacity.desktop'}, {'id': 'org.gnome.Connections.desktop'}]
+application-shortcuts=[{'name': 'Settings', 'icon': 'org.gnome.Settings', 'id': 'org.gnome.Settings.desktop'}, {'name': 'Tweaks', 'icon': 'org.gnome.tweaks', 'id': 'org.gnome.tweaks.desktop'}, {'name': 'Extensions', 'icon': 'com.mattjakeman.ExtensionManager', 'id': 'com.mattjakeman.ExtensionManager.desktop'}, {'name': 'Separator', 'icon': 'list-remove-symbolic', 'id': 'ArcMenu_Separator'}, {'name': 'Software', 'icon': 'org.gnome.Software', 'id': 'ArcMenu_Software'}, {'name': 'Separator', 'icon': 'list-remove-symbolic', 'id': 'ArcMenu_Separator'}, {'id': 'io.missioncenter.MissionCenter.desktop'}, {'id': 'org.gnome.Ptyxis.desktop'}]
 default-menu-view-redmond='Pinned_Apps'
+alphabetize-all-programs=true
 disable-user-avatar=true
 enable-horizontal-flip=true
 enable-standlone-runner-menu=false
