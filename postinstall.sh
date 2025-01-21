@@ -90,8 +90,8 @@ echo "                             APPLICATIONS - configure apps                
 echo "___________________________________________________________________________________"
 echo     "Configure Mousepad TextEditor"
 echo "___________________________________"
-mkdir -p /var/home/shanti/.var/app/org.xfce.mousepad/config/glib-2.0/settings
-tee -a /var/home/shanti/.var/app/org.xfce.mousepad/config/glib-2.0/settings/keyfile &>/dev/null << EOF
+mkdir -p $HOME/.var/app/org.xfce.mousepad/config/glib-2.0/settings
+tee -a $HOME/.var/app/org.xfce.mousepad/config/glib-2.0/settings/keyfile &>/dev/null << EOF
 [org/xfce/mousepad/preferences/window]
 toolbar-visible=true
 statusbar-visible=true
@@ -109,9 +109,9 @@ echo "___________________________________"
 # For current and future system users and profiles
 # Create default policies (install minimal set of extensions and theme, enable syncing of your toolbar layout, disable default Mozilla bookmarks)
 # first delete existing profiles
-rm -r /var/home/shanti/.var/app/org.mozilla.firefox/cache/mozilla/firefox/*.default*
-rm -r $HOME/.mozilla/firefox/*.default*
-rm $HOME/.mozilla/firefox/profiles.ini
+rm -r $HOME/.var/app/org.mozilla.firefox/.mozilla/firefox/*.default*
+rm -r $HOME/.var/app/org.mozilla.firefox/cache/mozilla/firefox/*.default*
+rm $HOME/.var/app/org.mozilla.firefox/.mozilla/firefox/profiles.ini
 
 # Create default firefox policies
 sudo mkdir -p /var/lib/flatpak/extension/org.mozilla.firefox.systemconfig/x86_64/stable/policies
