@@ -1,17 +1,25 @@
-1. Install Fedora Silverblue
-    - Download the Fedora Media Writer and use it to prep your USB boot stick (use a fast min. 32GB one).
-    - Shutdown, turn on, hit bootmenu key (usually F9 or F10), select the USB stick. Install Fedora Silverblue.
-    - Reboot, finish wizard
-2. Rebase to the base uBlue OS image
-    - Open Terminal (CTRL+T) and rebase with this command:
-       - For Intel/AMD: `rpm-ostree rebase ostree-unverified-registry:ghcr.io/ublue-os/silverblue-main`
-       - For nVidia: `rpm-ostree rebase ostree-unverified-registry:ghcr.io/ublue-os/silverblue-nvidia`
-    - Reboot
-3. Run the Fedora Silverblue Intuitive script to configure the OS, install & configure common apps
-    - Download and run it:
-        - `cd Downloads` 
-        - `wget https://raw.githubusercontent.com/zilexa/Fedora-Silverblue-Intuitive/main/postinstall.sh`
-        - `bash postinstall.sh`
-    - Follow the instructions at the beginning and end. Have some patience. 
-    - Reboot when done. 
-  
+This script will finalize your OS setup and make it ready-to-go for daily use, for most users.
+
+See https://projectbluefin.io/, the recommended OS especially for modern laptops and PCs. Instructions on how to install are on that page.
+
+# Why Bluefin GNOME-Intuitive?
+I personally find Gnome a horrible out-of-the-box experience, especially for new users coming from MacOS and Windows. Not because its unfinished or incomplete but because the desktop you see hides too much bare basic functionality and requires mostly gestures to understand.
+
+# What will Bluefin GNOME-Intuitive do?
+The script itself is small and contains comments explaining every step. It does 4 things.
+1. During initial Bluefin setup, you get to choose the OS languages. However this is not applied to the applications you install later as end user (Flatpak apps) via the the app store (called simply "Software"). The first step will interactively add the language support you need (if any besides English).
+2. Install just a few basic useful apps. and replace the text editor for a less bare but still simple (and still in Gnome native programming language, GTK) text editor.
+3. Configure a couple of apps, for example, to ensure LibreOffice looks familiar for most users, with icons and ribbon like Office365, saving files as docx etc.
+4. Apply Gnome configuration (and install the necessary Gnome extensions) that will allow users to immediately recognise OS elements, with less elements than default Gnome: a single all in one bar, on the left side of the screen, to ensure maximum screen space for actual work. 
+   
+# How to apply the script?
+After installing Bluefin OS, download the script then execute it as follows:
+
+1. Open Terminal
+2. go to Downloads: `cd Downloads` [ENTER]
+3. `bash postinstall.sh` [ENTER]
+4. Follow instructions about language support and enter your password when asked. 
+
+Feel free to edit the script to your needs before executing.
+
+Enjoy!
