@@ -1,9 +1,12 @@
 This script will finalize your OS setup and make it ready-to-go for daily use, for most users.
 
-See https://projectbluefin.io/, the recommended OS especially for modern laptops and PCs. Instructions on how to install are on that page.
+See https://projectbluefin.io/, the recommended OS especially for modern laptops and PCs. It explains why and also explains the main differentiator: it's based Fedora Silverblue, a so called atomic or "immutable" OS, where the OS and it's apps and tools are locked down. Just like iOS and Android. It gives you an easy to use, safe, secure desktop that end users (family members for example) can't accidentally 'break'. 
+Instructions on how to install are on that page.
 
 # Why Bluefin GNOME-Intuitive?
-I personally find Gnome a horrible out-of-the-box experience, especially for new users coming from MacOS and Windows. Not because its unfinished or incomplete but because the desktop you see hides too much bare basic functionality and requires mostly gestures to understand.
+Bluefin comes with the most popular Linux GUI, Gnome. Gnome is inspired by MacOS but had taken minimalism to the extreme. 
+I personally find Gnome a horrible out-of-the-box experience, especially for new users coming from MacOS and Windows. Not because its unfinished or incomplete but because the desktop you are initially presented with, hides too much bare basic functionality and requires mostly gestures to understand.
+Gnome however can be an absolute bliss to use by selecting the right extensions and make light changes to its standard configuration.
 
 # What will Bluefin GNOME-Intuitive do?
 The script itself is small and contains comments explaining every step. It does 5 things:
