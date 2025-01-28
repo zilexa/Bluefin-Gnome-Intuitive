@@ -60,6 +60,8 @@ bash install-gnome-extensions.sh --enable 5263
 bash install-gnome-extensions.sh --enable 4338
 # Custom Hot Corners (custom-hot-corners-extended@G-dH.github.com)
 bash install-gnome-extensions.sh --enable 4167
+# Tiling Shell (tilingshell@ferrarodomenico.com)
+bash install-gnome-extensions.sh --enable 7065
 # Bing Wallpaper (BingWallpaper@ineffable-gmail.com)
 mkdir -p $HOME/Pictures/Wallpapers
 bash install-gnome-extensions.sh --enable 1262
@@ -168,47 +170,3 @@ fc-cache -f -v
 # Remove the downloaded font file
 rm $HOME/Downloads/fonts-office365.tar.xz
 
-
-echo "___________________________________________________________________________________"
-echo "                                                                                   "
-echo "                             OPTIONAL SETTINGS - choose y/n                        "
-echo "___________________________________________________________________________________"
-# Get a Firefox shortcut for 2 profiles
-echo "---------------------------------------"
-echo "Firefox: would you like to be able to launch different profiles (2), by simply right-clicking the Firefox shortcut?"
-read -p "Only useful if multiple users use this machine and each user has its own Firefox profile. (y/n)?" answer
-case ${answer:0:1} in
-    y|Y )
-    mkdir -p $HOME/.local/share/flatpak/exports/share/applications
-    cp /var/lib/flatpak/exports/share/applications/org.mozilla.firefox.desktop $HOME/.local/share/flatpak/exports/share/applications/
-    echo "Please enter the first Firefox profile (user) name:"
-    read -p 'firefox profile 1 name (e.g. Lisa): ' PROFILE1
-    echo "Please enter the second Firefox profile (user) name:"
-    read -p 'firefox profile 2 name (e.g. John): ' PROFILE2
-    echo adding profiles to right-click of Firefox shortcut... 
-    sed -i -e 's@Actions=new-window;new-private-window;open-profile-manager;@Actions=new-window;new-private-window;$PROFILE1;$PROFILE2;@g' $HOME/.local/share/flatpak/exports/share/applications/org.mozilla.firefox.desktop
-    tee -a $HOME/.local/share/flatpak/exports/share/applications/ &>/dev/null << EOF 
-[Desktop Action $PROFILE1]
-Name=start $profile1's Firefox
-Exec=firefox -P $PROFILE1 -no-remote
-
-[Desktop Action $PROFILE2]
-Name=start $profile2's Firefox
-Exec=firefox -P $PROFILE2 -no-remote
-
-EOF
-
-    # The shortcut in ~/.local/share/application overrides the system shortcuts in /usr/share/applications. This also removes file associations. Fix those:
-    ##xdg-settings set default-web-browser firefox.desktop
-    ##xdg-mime default firefox.desktop x-scheme-handler/chrome
-    ##xdg-mime default firefox.desktop application/x-extension-htm
-    ##xdg-mime default firefox.desktop application/x-extension-html
-    ##xdg-mime default firefox.desktop application/x-extension-shtml
-    ##xdg-mime default firefox.desktop application/xhtml+xml
-    ##xdg-mime default firefox.desktop application/x-extension-xhtml
-    ##xdg-mime default firefox.desktop application/x-extension-xht
-    ;;
-    * )
-        echo "Keeping the Firefox shortcut as is..."
-    ;;
-esac
