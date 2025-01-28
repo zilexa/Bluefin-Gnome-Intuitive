@@ -110,7 +110,10 @@ panel-positions='{"0":"LEFT"}'
 panel-sizes='{"0":57}'
 trans-dynamic-anim-target=0.80000000000000004
 trans-use-custom-opacity=true
+trans-use-custom-gradient=true
 trans-use-dynamic-opacity=true
+trans-gradient-bottom-opacity=0.35000000000000003
+trans-panel-opacity=0.45000000000000001
 tray-padding=-1
 window-preview-title-position='TOP'
 
@@ -138,6 +141,10 @@ show-indicator=false
 # Extension: Search Light
 [/org/gnome/shell/extensions/search-light]
 shortcut-search=['<Super>space']
+
+# Extension: Blur My Shell
+[org/gnome/shell/extensions/blur-my-shell/panel]
+blur=false
 
 # Extension: Bing wallpaper
 [org/gnome/shell/extensions/bingwallpaper]
