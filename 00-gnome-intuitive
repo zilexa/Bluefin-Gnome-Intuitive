@@ -1,7 +1,7 @@
 [org/gnome/shell]
 # Extensions
-enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'blur-my-shell@aunetx', 'tailscale@joaophi.github.com', 'allowlockedremotedesktop@kamens.us', 'arcmenu@arcmenu.com', 'BingWallpaper@ineffable-gmail.com', 'custom-hot-corners-extended@G-dH.github.com', 'dash-to-panel@jderose9.github.com', 'gtk4-ding@smedius.gitlab.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'tilingshell@ferrarodomenico.com', 'search-light@icedman.github.com']
-disabled-extensions=['gsconnect@andyholmes.github.io']
+enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'tailscale@joaophi.github.com', 'allowlockedremotedesktop@kamens.us', 'arcmenu@arcmenu.com', 'BingWallpaper@ineffable-gmail.com', 'custom-hot-corners-extended@G-dH.github.com', 'dash-to-panel@jderose9.github.com', 'gtk4-ding@smedius.gitlab.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'tilingshell@ferrarodomenico.com', 'search-light@icedman.github.com']
+disabled-extensions=['blur-my-shell@aunetx', 'gsconnect@andyholmes.github.io']
 # Dash (Dash-to-Panel) pinned apps
 favorite-apps=['org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'org.xfce.mousepad.desktop', 'org.gnome.Calculator.desktop']
 
@@ -142,14 +142,12 @@ show-indicator=false
 [/org/gnome/shell/extensions/search-light]
 shortcut-search=['<Super>space']
 
-# Extension: Blur My Shell
-[org/gnome/shell/extensions/blur-my-shell/panel]
-blur=false
-
 # Extension: Bing wallpaper
 [org/gnome/shell/extensions/bingwallpaper]
 download-folder='~/Pictures/Wallpapers'
 override-lockscreen-blur=true
+lockscreen-blur-strength=25
+lockscreen-blur-brightness=30
 
 # Screenshots: save to subfolder of Pictures
 [org/gnome/gnome-screenshot]
