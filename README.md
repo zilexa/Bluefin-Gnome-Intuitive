@@ -19,7 +19,7 @@ The script itself is small and contains comments explaining every step. It does 
 # How to apply the script?
 After installing Bluefin OS, download the script then execute it as follows:
 
-1. Click [here](https://downgit.github.io/#/home?url=https://github.com/zilexa/Bluefin-Gnome-Intuitive/blob/main/postinstall.sh) to download postinstall.sh.
+1. Click [here](https://github.com/zilexa/Bluefin-Gnome-Intuitive/blob/main/postinstall.sh) and use the down-arrow icon on the right-side to download post-install.sh.
 2. Open Terminal
 3. go to Downloads: `cd Downloads` [ENTER]
 4. `bash postinstall.sh` [ENTER]
