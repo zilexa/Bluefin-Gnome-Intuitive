@@ -133,13 +133,13 @@ ctrl=true
 [org/gnome/shell/extensions/tilingshell]
 inner-gaps=4
 outer-gaps=4
-layouts-json=[{"id":"Layout 3","tiles":[{"x":0,"y":0,"width":0.33,"height":1,"groups":[1]},{"x":0.33,"y":0,"width":0.67,"height":1,"groups":[1]}]},{"id":"Layout 4","tiles":[{"x":0,"y":0,"width":0.67,"height":1,"groups":[1]},{"x":0.67,"y":0,"width":0.33,"height":1,"groups":[1]}]},{"id":"7206304","tiles":[{"x":0,"y":0,"width":0.5002683843263553,"height":1,"groups":[1]},{"x":0.5002683843263553,"y":0,"width":0.49973161567364466,"height":1,"groups":[1]}]},{"id":"7238959","tiles":[{"x":0,"y":0,"width":1,"height":0.5,"groups":[1]},{"x":0,"y":0.5,"width":1,"height":0.49999999999999994,"groups":[1]}]}]
+layouts-json=['{"id":"Layout 3","tiles":[{"x":0,"y":0,"width":0.33,"height":1,"groups":[1]},{"x":0.33,"y":0,"width":0.67,"height":1,"groups":[1]}]},{"id":"Layout 4","tiles":[{"x":0,"y":0,"width":0.67,"height":1,"groups":[1]},{"x":0.67,"y":0,"width":0.33,"height":1,"groups":[1]}]},{"id":"7206304","tiles":[{"x":0,"y":0,"width":0.5002683843263553,"height":1,"groups":[1]},{"x":0.5002683843263553,"y":0,"width":0.49973161567364466,"height":1,"groups":[1]}]},{"id":"7238959","tiles":[{"x":0,"y":0,"width":1,"height":0.5,"groups":[1]},{"x":0,"y":0.5,"width":1,"height":0.49999999999999994,"groups":[1]}]}']
 overridden-settings={"org.gnome.mutter.keybindings":{"toggle-tiled-right":"['<Super>Right']","toggle-tiled-left":"['<Super>Left']"},"org.gnome.desktop.wm.keybindings":{"maximize":"['<Super>Up']","unmaximize":"['<Super>Down']"},"org.gnome.mutter":{"edge-tiling":"true"}}
 selected-layouts=[['Layout 3'], ['Layout 3']]
 show-indicator=false
 
 # Extension: Search Light
-[/org/gnome/shell/extensions/search-light]
+[org/gnome/shell/extensions/search-light]
 shortcut-search=['<Super>space']
 
 # Extension: Bing wallpaper
