@@ -19,7 +19,7 @@ The script itself is small and contains comments explaining every step. It does 
 # How to apply the script?
 After installing Bluefin OS, download the script then execute it as follows:
 
-1. Download postinstall.sh [here](blob:https://github.com/f369eb31-4c15-49ad-8408-24c3ae6cc26d).
+1. Download postinstall.sh (here)[blob:https://github.com/f369eb31-4c15-49ad-8408-24c3ae6cc26d].
 2. Open Terminal
 3. go to Downloads: `cd Downloads` [ENTER]
 4. `bash postinstall.sh` [ENTER]
