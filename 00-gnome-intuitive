@@ -19,7 +19,8 @@ idle-delay=uint32 900
 [org/gnome/desktop/interface]
 color-scheme='prefer-dark'
 gtk-theme='Adwaita'
-icon-theme='adwaita'
+icon-theme='Adwaita'
+accent-color='teal'
 show-battery-percentage=true
 text-scaling-factor=1.0
 
