@@ -72,7 +72,8 @@ start-corner='bottom-left'
 # Extension: Arcmenu
 [org/gnome/shell/extensions/arcmenu]
 pinned-apps=[{'id': 'org.mozilla.firefox.desktop'}, {'id': 'org.onlyoffice.desktopeditors.desktop'}, {'id': '3593608b-8722-4917-a1f7-9ed8c58c5ff5', 'name': 'Office', 'isFolder': 'true'}, {'id': 'simple-scan.desktop'}, {'id': 'org.xfce.mousepad.desktop'}, {'name': 'Calculator', 'id': 'org.gnome.Calculator.desktop'}, {'id': 'org.gimp.GIMP.desktop'}, {'name': 'LosslessCut', 'id': 'no.mifi.losslesscut.desktop'}, {'id': 'fr.handbrake.ghb.desktop'}, {'id': 'org.audacityteam.Audacity.desktop'}, {'id': 'org.gnome.Connections.desktop'}]
-application-shortcuts=[{'name': 'Settings', 'icon': 'org.gnome.Settings', 'id': 'org.gnome.Settings.desktop'}, {'name': 'Tweaks', 'icon': 'org.gnome.tweaks', 'id': 'org.gnome.tweaks.desktop'}, {'name': 'Extensions', 'icon': 'com.mattjakeman.ExtensionManager', 'id': 'com.mattjakeman.ExtensionManager.desktop'}, {'name': 'Separator', 'icon': 'list-remove-symbolic', 'id': 'ArcMenu_Separator'}, {'name': 'Software', 'icon': 'org.gnome.Software', 'id': 'ArcMenu_Software'}, {'name': 'Separator', 'icon': 'list-remove-symbolic', 'id': 'ArcMenu_Separator'}, {'id': 'io.missioncenter.MissionCenter.desktop'}, {'id': 'org.gnome.Ptyxis.desktop'}]
+application-shortcuts=[{'name': 'Software', 'icon': 'org.gnome.Software', 'id': 'ArcMenu_Software'}, {'name': 'Separator', 'icon': 'list-remove-symbolic', 'id': 'ArcMenu_Separator'}, {'id': 'io.missioncenter.MissionCenter.desktop'}, {'name': 'Separator', 'icon': 'list-remove-symbolic', 'id': 'ArcMenu_Separator'}, {'name': 'Extensions', 'icon': 'com.mattjakeman.ExtensionManager', 'id': 'com.mattjakeman.ExtensionManager.desktop'}, {'id': 'page.tesk.Refine.desktop'}, {'name': 'Settings', 'icon': 'org.gnome.Settings', 'id': 'org.gnome.Settings.desktop'}, {'name': 'Separator', 'icon': 'list-remove-symbolic', 'id': 'ArcMenu_Separator'}]
+directory-shortcuts=[{'id': 'ArcMenu_Home', 'name': 'Home', 'icon': 'ArcMenu_Home'}, {'id': 'ArcMenu_Downloads', 'name': 'Downloads', 'icon': 'ArcMenu_Downloads'}, {'id': 'ArcMenu_Documents', 'name': 'Documents', 'icon': 'ArcMenu_Documents'}, {'id': 'ArcMenu_Pictures', 'name': 'Pictures', 'icon': 'ArcMenu_Pictures'}, {'name': 'Media', 'icon': 'ArcMenu_Videos', 'id': 'ArcMenu_Videos'}]
 default-menu-view-redmond='Pinned_Apps'
 alphabetize-all-programs=true
 disable-user-avatar=true
@@ -82,6 +83,7 @@ hide-overview-on-startup=true
 menu-button-appearance='Text'
 menu-layout='Redmond'
 multi-monitor=true
+show-external-devices=false
 power-display-style='Menu'
 power-options=[(0, true), (1, false), (2, true), (3, true), (4, false), (5, true), (6, true), (7, false)]
 prefs-visible-page=0
@@ -117,6 +119,7 @@ trans-gradient-bottom-opacity=0.35000000000000003
 trans-panel-opacity=0.45000000000000001
 tray-padding=-1
 window-preview-title-position='TOP'
+isolate-monitors=true
 
 # Extension: Hot Corners
 [org/gnome/shell/extensions/custom-hot-corners-extended/misc]
