@@ -36,10 +36,11 @@ flatpak install -y fedora org.gimp.GIMP
 flatpak install -y flathub app/fr.handbrake.ghb/x86_64/stable
 # Video trimmer, converter, merger
 flatpak install -y flathub losslesscut
-# OnlyOffice
-flatpak install -y flathub org.onlyoffice.desktopeditors
 # LibreOffice
 flatpak install -y fedora org.libreoffice.LibreOffice
+# OnlyOffice
+flatpak install -y flathub org.onlyoffice.desktopeditors
+
 
 
 echo "___________________________________________________________________________________"
