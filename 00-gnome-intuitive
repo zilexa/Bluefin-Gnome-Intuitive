@@ -153,8 +153,11 @@ download-folder='~/Pictures/Wallpapers'
 override-lockscreen-blur=true
 lockscreen-blur-strength=25
 lockscreen-blur-brightness=30
-previous-days=10
+previous-days=30
 delete-previous=true
+random-mode-enabled=false
+revert-to-current-image=true
+
 
 # Screenshots: save to subfolder of Pictures
 [org/gnome/gnome-screenshot]
