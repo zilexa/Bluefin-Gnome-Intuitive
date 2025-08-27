@@ -54,7 +54,6 @@ night-light-schedule-automatic=false
 night-light-schedule-from=22.0
 night-light-schedule-to=8.75
 
-
 # Nemo file manager preferences
 #[org/nemo/preferences]
 #date-format='iso'
@@ -68,14 +67,16 @@ night-light-schedule-to=8.75
 [org/gnome/shell/extensions/gtk4-ding]
 show-home=false
 start-corner='bottom-left'
+show-trash=true
 
 # Extension: Arcmenu
 [org/gnome/shell/extensions/arcmenu]
-pinned-apps=[{'id': 'org.mozilla.firefox.desktop'}, {'id': 'org.onlyoffice.desktopeditors.desktop'}, {'id': '3593608b-8722-4917-a1f7-9ed8c58c5ff5', 'name': 'Office', 'isFolder': 'true'}, {'id': 'simple-scan.desktop'}, {'id': 'org.xfce.mousepad.desktop'}, {'name': 'Calculator', 'id': 'org.gnome.Calculator.desktop'}, {'id': 'org.gimp.GIMP.desktop'}, {'name': 'LosslessCut', 'id': 'no.mifi.losslesscut.desktop'}, {'id': 'fr.handbrake.ghb.desktop'}, {'id': 'org.audacityteam.Audacity.desktop'}, {'id': 'org.gnome.Connections.desktop'}]
+pinned-apps=[{'id': 'org.mozilla.firefox.desktop'}, {'id': 'org.onlyoffice.desktopeditors.desktop'}, {'id': 'org.xfce.mousepad.desktop'}, {'name': 'Calculator', 'id': 'org.gnome.Calculator.desktop'}, {'id': 'org.kde.digikam.desktop'}, {'id': 'org.gimp.GIMP.desktop'}, {'name': 'LosslessCut', 'id': 'no.mifi.losslesscut.desktop'}, {'id': 'fr.handbrake.ghb.desktop'}, {'id': 'org.audacityteam.Audacity.desktop'}, {'id': 'org.gnome.Connections.desktop'}]
 application-shortcuts=[{'name': 'Software', 'icon': 'org.gnome.Software', 'id': 'ArcMenu_Software'}, {'name': 'Separator', 'icon': 'list-remove-symbolic', 'id': 'ArcMenu_Separator'}, {'id': 'io.missioncenter.MissionCenter.desktop'}, {'name': 'Separator', 'icon': 'list-remove-symbolic', 'id': 'ArcMenu_Separator'}, {'name': 'Extensions', 'icon': 'com.mattjakeman.ExtensionManager', 'id': 'com.mattjakeman.ExtensionManager.desktop'}, {'id': 'page.tesk.Refine.desktop'}, {'name': 'Settings', 'icon': 'org.gnome.Settings', 'id': 'org.gnome.Settings.desktop'}, {'name': 'Separator', 'icon': 'list-remove-symbolic', 'id': 'ArcMenu_Separator'}]
-directory-shortcuts=[{'id': 'ArcMenu_Home', 'name': 'Home', 'icon': 'ArcMenu_Home'}, {'id': 'ArcMenu_Downloads', 'name': 'Downloads', 'icon': 'ArcMenu_Downloads'}, {'id': 'ArcMenu_Documents', 'name': 'Documents', 'icon': 'ArcMenu_Documents'}, {'id': 'ArcMenu_Pictures', 'name': 'Pictures', 'icon': 'ArcMenu_Pictures'}, {'name': 'Media', 'icon': 'ArcMenu_Videos', 'id': 'ArcMenu_Videos'}]
+directory-shortcuts=[{'id': 'ArcMenu_Home', 'name': 'Home', 'icon': 'ArcMenu_Home'}, {'id': 'ArcMenu_Downloads', 'name': 'Downloads', 'icon': 'ArcMenu_Downloads'}, {'id': 'ArcMenu_Documents', 'name': 'Documents', 'icon': 'ArcMenu_Documents'}, {'id': 'ArcMenu_Pictures', 'name': 'Pictures', 'icon': 'ArcMenu_Pictures'}, {'name': 'Recent', 'icon': 'document-open-recent-symbolic', 'id': 'ArcMenu_Recent'}]
 default-menu-view-redmond='Pinned_Apps'
 alphabetize-all-programs=true
+activate-on-launch=true
 disable-user-avatar=true
 enable-horizontal-flip=true
 enable-standlone-runner-menu=false
@@ -93,9 +94,9 @@ show-bookmarks=false
 show-external-devices=true
 show-hidden-recent-files=false
 vert-separator=true
-# Extension: Arcmenu (pinned apps folder)
-[org/gnome/shell/extensions/arcmenu/pinned-apps-folders/3593608b-8722-4917-a1f7-9ed8c58c5ff5]
-pinned-apps=[{'id': 'org.libreoffice.LibreOffice.writer.desktop'}, {'id': 'org.libreoffice.LibreOffice.calc.desktop'}, {'id': 'org.libreoffice.LibreOffice.impress.desktop'}, {'id': 'org.libreoffice.LibreOffice.base.desktop'}, {'id': 'org.libreoffice.LibreOffice.draw.desktop'}]
+# Extension: Arcmenu add a folder to the Favorite Apps list that contains the LibreOffice apps
+## [org/gnome/shell/extensions/arcmenu/pinned-apps-folders/3593608b-8722-4917-a1f7-9ed8c58c5ff5]
+## pinned-apps=[{'id': 'org.libreoffice.LibreOffice.writer.desktop'}, {'id': 'org.libreoffice.LibreOffice.calc.desktop'}, {'id': 'org.libreoffice.LibreOffice.impress.desktop'}, {'id': 'org.libreoffice.LibreOffice.base.desktop'}, {'id': 'org.libreoffice.LibreOffice.draw.desktop'}]
 
 # Extension: Dash-to-Panel configuration
 [org/gnome/shell/extensions/dash-to-panel]
