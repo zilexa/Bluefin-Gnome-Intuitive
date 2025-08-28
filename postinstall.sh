@@ -171,3 +171,5 @@ fc-cache -f -v
 # Remove the downloaded font file
 rm $HOME/Downloads/fonts-office365.tar.xz
 
+echo "Completed successfully, please close this window and reboot!"
+
