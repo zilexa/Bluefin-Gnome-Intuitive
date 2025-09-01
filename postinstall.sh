@@ -23,9 +23,6 @@ echo "                                                                          
 echo "               APPLICATIONS - Install required and recommended apps                "
 echo "___________________________________________________________________________________"
 # Install applications/tools via the proper method (Flatpak)
-# Remove Gnome Text Editor, install a less 'naked' simple texteditor instead
-flatpak uninstall -y org.gnome.TextEditor
-flatpak -y install flathub mousepad
 # Music editor tool
 flatpak install -y flathub org.audacityteam.Audacity
 # Image editor tool
@@ -36,12 +33,8 @@ flatpak install -y fedora org.gimp.GIMP
 flatpak install -y flathub app/fr.handbrake.ghb/x86_64/stable
 # Video trimmer, converter, merger
 flatpak install -y flathub losslesscut
-# LibreOffice
-flatpak install -y fedora org.libreoffice.LibreOffice
 # OnlyOffice
 flatpak install -y flathub org.onlyoffice.desktopeditors
-
-
 
 echo "___________________________________________________________________________________"
 echo "                                                                                   "
