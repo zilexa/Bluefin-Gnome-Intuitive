@@ -23,8 +23,6 @@ icon-theme='Adwaita'
 accent-color='teal'
 show-battery-percentage=true
 text-scaling-factor=1.0
-
-[org/gnome/desktop/interface]
 font-hinting='slight'
 font-antialiasing='rgba'
 
@@ -43,6 +41,9 @@ automatic-timezone=true
 [org/gnome/desktop/peripherals/touchpad]
 tap-to-click=true
 natural-scroll=false
+
+[org/gnome/mutter]
+overlay-key='Super'
 
 # Gnome Settings
 [org/gnome/desktop/privacy]
@@ -81,6 +82,7 @@ disable-user-avatar=true
 enable-horizontal-flip=true
 enable-standlone-runner-menu=false
 hide-overview-on-startup=true
+arcmenu-hotkey-overlay-key-enabled=false
 menu-button-appearance='Text'
 menu-layout='Redmond'
 multi-monitor=true
