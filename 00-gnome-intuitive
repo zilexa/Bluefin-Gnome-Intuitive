@@ -64,6 +64,9 @@ night-light-schedule-to=8.75
 #show-hidden-files=true
 #show-reload-icon-toolbar=true
 
+[org/gnome/nautilus/preferences]
+date-format='iso'
+
 # Extension: Desktop Icons
 [org/gnome/shell/extensions/gtk4-ding]
 show-home=false
