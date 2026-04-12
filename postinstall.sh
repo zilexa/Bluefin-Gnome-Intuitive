@@ -33,7 +33,9 @@ flatpak install -y fedora org.gimp.GIMP
 flatpak install -y flathub app/fr.handbrake.ghb/x86_64/stable
 # Video trimmer, converter, merger
 flatpak install -y flathub losslesscut
-# OnlyOffice
+# Collabora Office (for OpenDocument files, supports MS Office files as well)
+flatpak install -y flathub com.collaboraoffice.Office
+# OnlyOffice (Simpler suite, only for Microsoft Office files)
 flatpak install -y flathub org.onlyoffice.desktopeditors
 
 echo "___________________________________________________________________________________"
