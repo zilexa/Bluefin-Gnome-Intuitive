@@ -140,14 +140,6 @@ UITheme=theme-dark
 editorWindowMode=true
 EOF
 
-echo "       Configure LIBREOFFICE       "
-echo "___________________________________"
-# Adjust the LibreOffice settings to make it look like MS Office: icons: Colibre, ribbon view. Also enable LanguageTools modern spell and grammar checker, save every 5min etc. 
-cd $HOME/Downloads
-wget -P $HOME/Downloads/ "https://github.com/zilexa/Fedora-Silverblue-Intuitive-Postinstall/raw/main/libreoffice-configure-to-look-like-Office365.tar.xz"
-mkdir -p $HOME/.var/app/org.libreoffice.LibreOffice/config/libreoffice/4/user
-tar -xvf $HOME/Downloads/libreoffice-configure-to-look-like-Office365.tar.xz -C $HOME/.var/app/org.libreoffice.LibreOffice/config/libreoffice/4/user
-rm $HOME/Downloads/libreoffice-configure-to-look-like-Office365.tar.xz
 
 echo "Get & install all MS Office365 fonts"
 echo "___________________________________"
