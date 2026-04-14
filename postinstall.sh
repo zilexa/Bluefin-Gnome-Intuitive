@@ -82,26 +82,6 @@ sudo wget -P /etc/dconf/db/local.d https://raw.githubusercontent.com/zilexa/Fedo
 sudo dconf update
 
 
-echo "___________________________________________________________________________________"
-echo "                                                                                   "
-echo "                             APPLICATIONS - configure apps                         "
-echo "___________________________________________________________________________________"
-echo     "Configure Mousepad TextEditor"
-echo "___________________________________"
-mkdir -p $HOME/.var/app/org.xfce.mousepad/config/glib-2.0/settings
-tee -a $HOME/.var/app/org.xfce.mousepad/config/glib-2.0/settings/keyfile &>/dev/null << EOF
-[org/xfce/mousepad/preferences/window]
-toolbar-visible=true
-statusbar-visible=true
-remember-position=true
-
-[org/xfce/mousepad/preferences/view]
-show-line-numbers=true
-highlight-current-line=true
-match-braces=true
-color-scheme='cobalt'
-EOF
-
 echo        "Configure FIREFOX"
 echo "___________________________________"
 # For current and future system users and profiles
