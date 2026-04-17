@@ -67,6 +67,9 @@ night-light-schedule-to=8.75
 [org/gnome/nautilus/preferences]
 date-format='iso'
 
+[/org/gnome/nautilus/list-view]
+default-visible-columns=['name', 'size', 'type', 'date_modified', 'date_created']
+
 # Extension: Desktop Icons
 [org/gnome/shell/extensions/gtk4-ding]
 show-home=false
