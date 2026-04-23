@@ -23,6 +23,8 @@ echo "                                                                          
 echo "               APPLICATIONS - Install required and recommended apps                "
 echo "___________________________________________________________________________________"
 # Install applications/tools via the proper method (Flatpak)
+# Install Gearlever, a tool to install/integrate AppImage versions of Apps (for apps not available on Flathub/Bazaar)
+flatpak install -y flathub  it.mijorus.gearlever
 # Music editor tool
 flatpak install -y flathub org.audacityteam.Audacity
 # Image editor tool
@@ -35,6 +37,8 @@ flatpak install -y flathub app/fr.handbrake.ghb/x86_64/stable
 flatpak install -y flathub losslesscut
 # Collabora Office (for OpenDocument files, supports MS Office files as well)
 flatpak install -y flathub com.collaboraoffice.Office
+# OnlyOffice (Simpler suite, only for Microsoft Office files)
+flatpak install -y flathub org.onlyoffice.desktopeditors
 # OnlyOffice (Simpler suite, only for Microsoft Office files)
 flatpak install -y flathub org.onlyoffice.desktopeditors
 
