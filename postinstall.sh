@@ -4,18 +4,18 @@ echo "                                                                          
 echo "                           GET LANGUAGE INFO FROM USER                             "
 echo "___________________________________________________________________________________"
 # Get language & region info
-echo "___________________________________________________________________"
-read -p "Besides English, would you like spellchecker support for another language? (y/n)" answer
-case ${answer:0:1} in
-    y|Y )
-    echo "Please type the 2-letter countrycode for the language, for example "de" for German language (no caps):"
-    echo "___________________________________________________________________"
-    read -p 'countrycode for example "de" and hit ENTER: ' LANG
-    flatpak config --system --set languages "en;$LANG"
-    flatpak update -y ;;
-    n|N ) ;;
-    * ) ;;
-esac
+#echo "___________________________________________________________________"
+#read -p "Besides English, would you like spellchecker support for another language? (y/n)" answer
+#case ${answer:0:1} in
+#    y|Y )
+#    echo "Please type the 2-letter countrycode for the language, for example "de" for German language (no caps):"
+#    echo "___________________________________________________________________"
+#    read -p 'countrycode for example "de" and hit ENTER: ' LANG
+#    flatpak config --system --set languages "en;$LANG"
+#    flatpak update -y ;;
+#    n|N ) ;;
+#    * ) ;;
+#esac
 
 
 echo "___________________________________________________________________________________"
@@ -46,18 +46,20 @@ echo "__________________________________________________________________________
 wget -P $HOME/Downloads/ https://raw.githubusercontent.com/ToasterUwU/install-gnome-extensions/master/install-gnome-extensions.sh
 # Dash-to-Panel (dash-to-panel@jderose9.github.com)
 bash install-gnome-extensions.sh --enable 1160
-# Removable Drive menu (drive-menu@gnome-shell-extensions.gcampax.github.com)
-bash install-gnome-extensions.sh --enable 7
 # ArcMenu (arcmenu@arcmenu.com)
 bash install-gnome-extensions.sh --enable 3628
-# Desktop Icons (gtk4-ding@smedius.gitlab.com)
-bash install-gnome-extensions.sh --enable 5263
-# Allow Locked Remote Desktop (allowlockedremotedesktop@kamens.us)
-bash install-gnome-extensions.sh --enable 4338
-# Custom Hot Corners (custom-hot-corners-extended@G-dH.github.com)
-bash install-gnome-extensions.sh --enable 4167
 # Tiling Shell (tilingshell@ferrarodomenico.com)
 bash install-gnome-extensions.sh --enable 7065
+# Allow Locked Remote Desktop (allowlockedremotedesktop@kamens.us)
+bash install-gnome-extensions.sh --enable 3193
+# Desktop Icons (gtk4-ding@smedius.gitlab.com)
+bash install-gnome-extensions.sh --enable 4338
+# Blur My Shell ()
+bash install-gnome-extensions.sh --enable 5263
+# Removable Drive menu (drive-menu@gnome-shell-extensions.gcampax.github.com)
+bash install-gnome-extensions.sh --enable 7
+# Custom Hot Corners (custom-hot-corners-extended@G-dH.github.com)
+bash install-gnome-extensions.sh --enable 4167
 # Bing Wallpaper (BingWallpaper@ineffable-gmail.com)
 mkdir -p $HOME/Pictures/Wallpapers
 bash install-gnome-extensions.sh --enable 1262
