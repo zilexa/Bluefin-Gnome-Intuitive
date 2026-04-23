@@ -55,15 +55,6 @@ night-light-schedule-automatic=false
 night-light-schedule-from=22.0
 night-light-schedule-to=8.75
 
-# Nemo file manager preferences
-#[org/nemo/preferences]
-#date-format='iso'
-#default-folder-viewer='list-view'
-#inherit-folder-viewer=true
-#quick-renames-with-pause-in-between=true
-#show-hidden-files=true
-#show-reload-icon-toolbar=true
-
 [org/gnome/nautilus/preferences]
 date-format='iso'
 
@@ -118,8 +109,8 @@ hotkeys-overlay-combo='TEMPORARILY'
 leftbox-padding=-1
 panel-anchors='{"0":"MIDDLE"}'
 panel-element-positions='{"0":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"centered"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"activitiesButton","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}],"1":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"centered"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"activitiesButton","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'
-panel-positions='{"0":"LEFT"}'
-panel-sizes='{"0":57}'
+panel-positions='{"LGD-0x00000000":"LEFT"}'
+panel-sizes='{"LGD-0x00000000":49}'
 trans-dynamic-anim-target=0.80000000000000004
 trans-use-custom-opacity=true
 trans-use-custom-gradient=true
