@@ -3,7 +3,7 @@
 enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'blur-my-shell@aunetx', 'allowlockedremotedesktop@kamens.us', 'arcmenu@arcmenu.com', 'BingWallpaper@ineffable-gmail.com', 'custom-hot-corners-extended@G-dH.github.com', 'dash-to-panel@jderose9.github.com', 'gtk4-ding@smedius.gitlab.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'tilingshell@ferrarodomenico.com', 'search-light@icedman.github.com']
 disabled-extensions=['gsconnect@andyholmes.github.io']
 # Dash (Dash-to-Panel) pinned apps
-favorite-apps=['org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'org.xfce.mousepad.desktop', 'org.gnome.Calculator.desktop']
+favorite-apps=['org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'org.gnome.Calculator.desktop', 'org.onlyoffice.desktopeditors.desktop']
 
 [org/gnome/settings-daemon/plugins/power]
 ambient-enabled=true
@@ -69,9 +69,14 @@ show-trash=true
 
 # Extension: Arcmenu
 [org/gnome/shell/extensions/arcmenu]
-pinned-apps=[{'id': 'org.mozilla.firefox.desktop'}, {'id': 'org.onlyoffice.desktopeditors.desktop'}, {'id': 'org.xfce.mousepad.desktop'}, {'name': 'Calculator', 'id': 'org.gnome.Calculator.desktop'}, {'id': 'org.kde.digikam.desktop'}, {'id': 'org.gimp.GIMP.desktop'}, {'name': 'LosslessCut', 'id': 'no.mifi.losslesscut.desktop'}, {'id': 'fr.handbrake.ghb.desktop'}, {'id': 'org.audacityteam.Audacity.desktop'}, {'id': 'org.gnome.Connections.desktop'}]
-application-shortcuts=[{'name': 'Software', 'icon': 'org.gnome.Software', 'id': 'ArcMenu_Software'}, {'name': 'Separator', 'icon': 'list-remove-symbolic', 'id': 'ArcMenu_Separator'}, {'id': 'io.missioncenter.MissionCenter.desktop'}, {'name': 'Separator', 'icon': 'list-remove-symbolic', 'id': 'ArcMenu_Separator'}, {'name': 'Extensions', 'icon': 'com.mattjakeman.ExtensionManager', 'id': 'com.mattjakeman.ExtensionManager.desktop'}, {'id': 'page.tesk.Refine.desktop'}, {'name': 'Settings', 'icon': 'org.gnome.Settings', 'id': 'org.gnome.Settings.desktop'}, {'name': 'Separator', 'icon': 'list-remove-symbolic', 'id': 'ArcMenu_Separator'}]
-directory-shortcuts=[{'id': 'ArcMenu_Home', 'name': 'Home', 'icon': 'ArcMenu_Home'}, {'id': 'ArcMenu_Downloads', 'name': 'Downloads', 'icon': 'ArcMenu_Downloads'}, {'id': 'ArcMenu_Documents', 'name': 'Documents', 'icon': 'ArcMenu_Documents'}, {'id': 'ArcMenu_Pictures', 'name': 'Pictures', 'icon': 'ArcMenu_Pictures'}, {'name': 'Recent', 'icon': 'document-open-recent-symbolic', 'id': 'ArcMenu_Recent'}]
+directory-shortcuts=[{'id': 'ArcMenu_Home', 'name': 'Home', 'icon': 'ArcMenu_Home'}, {'id': 'ArcMenu_Documents', 'name': 'Documents', 'icon': 'ArcMenu_Documents'}, {'id': 'ArcMenu_Pictures', 'name': 'Pictures', 'icon': 'ArcMenu_Pictures'}, {'id': 'ArcMenu_Downloads', 'name': 'Downloads', 'icon': 'ArcMenu_Downloads'}]
+application-shortcuts=[{'id': 'org.gnome.DiskUtility.desktop'}, {'id': 'org.gnome.baobab.desktop'}, {'id': 'io.missioncenter.MissionCenter.desktop'}, {'name': 'Separator', 'icon': 'list-remove-symbolic', 'id': 'ArcMenu_Separator'}, {'id': 'io.github.kolunmi.Bazaar.desktop'}, {'id': 'com.github.tchx84.Flatseal.desktop'}, {'name': 'Separator', 'icon': 'list-remove-symbolic', 'id': 'ArcMenu_Separator'}, {'id': 'system-update.desktop', 'name': 'Update System'}, {'name': 'Separator', 'icon': 'list-remove-symbolic', 'id': 'ArcMenu_Separator'}, {'name': 'Extensions', 'icon': 'com.mattjakeman.ExtensionManager', 'id': 'com.mattjakeman.ExtensionManager.desktop'}, {'id': 'page.tesk.Refine.desktop'}, {'name': 'Settings', 'icon': 'org.gnome.Settings', 'id': 'org.gnome.Settings.desktop'}]
+pinned-apps=[{'id': 'org.freefilesync.FreeFileSync.desktop'}, {'id': 'org.mozilla.firefox.desktop'}, {'id': 'org.onlyoffice.desktopeditors.desktop'}, {'id': 'com.collaboraoffice.Office.desktop'}, {'id': 'org.gnome.Calculator.desktop'}, {'id': 'org.gnome.TextEditor.desktop'}, {'id': 'com.github.PintaProject.Pinta.desktop'}, {'id': 'org.gimp.GIMP.desktop'}, {'id': '7dc3dfc0-e6a3-487b-b592-d4ff8f4299c2', 'name': 'Sound & Video', 'isFolder': 'true'}, {'id': 'org.gnome.Connections.desktop'}, {'id': 'org.gnome.Ptyxis.desktop'}]
+[/org/gnome/shell/extensions/arcmenu/pinned-apps-folders/7dc3dfc0-e6a3-487b-b592-d4ff8f4299c2]
+pinned-apps=[{'id': 'org.gnome.gitlab.YaLTeR.VideoTrimmer.desktop'}, {'name': 'LosslessCut', 'id': 'no.mifi.losslesscut.desktop'}, {'id': 'fr.handbrake.ghb.desktop'}, {'id': 'org.audacityteam.Audacity.desktop'}]
+power-options=[(0, true), (1, true), (2, true), (3, true), (4, false), (5, true), (6, true), (7, false)]
+power-display-style='Menu'
+
 default-menu-view-redmond='Pinned_Apps'
 alphabetize-all-programs=true
 activate-on-launch=true
@@ -84,8 +89,7 @@ menu-button-appearance='Text'
 menu-layout='Redmond'
 multi-monitor=true
 show-external-devices=false
-power-display-style='Menu'
-power-options=[(0, true), (1, false), (2, true), (3, true), (4, false), (5, true), (6, true), (7, false)]
+
 prefs-visible-page=0
 search-provider-recent-files=true
 searchbar-default-top-location='Top'
@@ -108,7 +112,7 @@ dot-position='BOTTOM'
 hotkeys-overlay-combo='TEMPORARILY'
 leftbox-padding=-1
 panel-anchors='{"0":"MIDDLE"}'
-panel-element-positions='{"0":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"centered"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"activitiesButton","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}],"1":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"centered"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"activitiesButton","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'
+panel-element-positions='{"1":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"centered"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"activitiesButton","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}],"LGD-0x00000000":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"centered"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"activitiesButton","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'
 panel-positions='{"LGD-0x00000000":"LEFT"}'
 panel-sizes='{"LGD-0x00000000":49}'
 trans-dynamic-anim-target=0.80000000000000004
@@ -120,6 +124,7 @@ trans-panel-opacity=0.45000000000000001
 tray-padding=-1
 window-preview-title-position='TOP'
 isolate-monitors=true
+
 
 # Extension: Hot Corners
 [org/gnome/shell/extensions/custom-hot-corners-extended/misc]
@@ -135,13 +140,30 @@ ctrl=true
 
 # Extension: Tiling Shell
 [org/gnome/shell/extensions/tilingshell]
+show-indicator=false
+inner-gaps='uint32 0'
+outer-gaps='uint32 0'
 top-edge-maximize=true
 enable-tiling-system-windows-suggestions=true
 enable-snap-assistant-windows-suggestions=true
 enable-screen-edges-windows-suggestions=true
-inner-gaps=2
-outer-gaps=0
-layouts-json='[{"id":"Layout 3","tiles":[{"x":0,"y":0,"width":0.33,"height":1,"groups":[1]},{"x":0.33,"y":0,"width":0.67,"height":1,"groups":[1]}]},{"id":"Layout 2","tiles":[{"x":0,"y":0,"width":0.22,"height":1,"groups":[1]},{"x":0.22,"y":0,"width":0.56,"height":1,"groups":[1,2]},{"x":0.78,"y":0,"width":0.22,"height":1,"groups":[2]}]},{"id":"1432793","tiles":[{"x":0,"y":0,"width":0.5,"height":1,"groups":[1]},{"x":0.5,"y":0,"width":0.499999999999999,"height":1,"groups":[1]}]},{"id":"Layout 4","tiles":[{"x":0,"y":0,"width":0.67,"height":1,"groups":[1]},{"x":0.67,"y":0,"width":0.33,"height":1,"groups":[1]}]}]'
+layouts-json='[{"id":"Layout 4","tiles":[{"x":0,"y":0,"width":0.67,"height":1,"groups":[1]},{"x":0.67,"y":0,"width":0.33,"height":1,"groups":[1]}]},{"id":"Layout 2","tiles":[{"x":0,"y":0,"width":0.22,"height":1,"groups":[1]},{"x":0.22,"y":0,"width":0.56,"height":1,"groups":[1,2]},{"x":0.78,"y":0,"width":0.22,"height":1,"groups":[2]}]},{"id":"1432793","tiles":[{"x":0,"y":0,"width":0.5,"height":1,"groups":[1]},{"x":0.5,"y":0,"width":0.499999999999999,"height":1,"groups":[1]}]},{"id":"Layout 3","tiles":[{"x":0,"y":0,"width":0.33,"height":1,"groups":[1]},{"x":0.33,"y":0,"width":0.67,"height":1,"groups":[1]}]}]'
+
+# Extension: BlurMyShell
+[org/gnome/shell/extensions/blur-my-shell/panel]
+blur=false
+[org/gnome/shell/extensions/blur-my-shell/screenshot]
+blur=false
+[org/gnome/shell/extensions/blur-my-shell/window-list]
+blur=false
+[org/gnome/shell/extensions/blur-my-shell/coverflow-alt-tab]
+blur=false
+[org/gnome/shell/extensions/blur-my-shell/panel]
+blur=false
+[org/gnome/shell/extensions/blur-my-shell/appfolder]
+blur=false
+[org/gnome/shell/extensions/blur-my-shell/dash-to-dock]
+blur=false
 
 # Extension: Search Light
 [org/gnome/shell/extensions/search-light]
@@ -150,9 +172,7 @@ shortcut-search=['<Super>space']
 # Extension: Bing wallpaper
 [org/gnome/shell/extensions/bingwallpaper]
 download-folder='~/Pictures/Wallpapers'
-override-lockscreen-blur=true
-lockscreen-blur-strength=25
-lockscreen-blur-brightness=30
+override-lockscreen-blur=false
 previous-days=30
 delete-previous=true
 random-mode-enabled=false
