@@ -3,9 +3,9 @@ echo "__________________________________________________________________________
 echo "                                                                                   "
 echo "                           REMOVE UNNECESSARY APPS                                "
 echo "___________________________________________________________________________________"
+# Remove apps that 99% of regular users will never use (offline mail app; linux distro loader; a backup tool that requires the tool to view/recover the files; a tool to create bootable usb drives) 
 flatpak uninstall -y --delete-data org.mozilla.Thunderbird io.github.mrvladus.DistroShelf org.gnome.DejaDup io.gitlab.adhami3310.Impression
 flatpak uninstall -y --unused
-
 
 echo "___________________________________________________________________________________"
 echo "                                                                                   "
@@ -25,7 +25,6 @@ case ${answer:0:1} in
     * ) ;;
 esac
 
-
 echo "___________________________________________________________________________________"
 echo "                                                                                   "
 echo "               APPLICATIONS - Install required and recommended apps                "
@@ -35,10 +34,6 @@ echo "__________________________________________________________________________
 flatpak install -y flathub it.mijorus.gearlever
 # Install CameraCtrls - to adjust webcam video quality settings, required on Linux for laptop webcams that are not fully supported. 
 flatpak install -y flathub hu.irl.cameractrls
-# Collabora Office (for OpenDocument files, supports MS Office files as well)
-flatpak install -y flathub com.collaboraoffice.Office
-# OnlyOffice (Simpler suite, only for Microsoft Office files)
-flatpak install -y flathub org.onlyoffice.desktopeditors
 # Tool to sync a folder to external drive, incremental changes only (to backup your personal files to an external drive) 
 flatpak install -y org.freefilesync.FreeFileSync
 # Music player Amberol
@@ -55,7 +50,15 @@ flatpak install -y flathub app/fr.handbrake.ghb/x86_64/stable
 flatpak install -y org.gnome.gitlab.YaLTeR.VideoTrimmer
 # Video trimmer, lossless, with more options, converter, merger
 flatpak install -y flathub losslesscut
-
+# Collabora Office (for OpenDocument files, supports MS Office files as well)
+flatpak install -y flathub com.collaboraoffice.Office
+# OnlyOffice (Simpler suite, only for Microsoft Office files)
+flatpak install -y flathub org.onlyoffice.desktopeditors
+# OnlyOffice: create its config file, add the setting to always open docs in their own window instead of tabs
+mkdir -p $HOME/.var/app/org.onlyoffice.desktopeditors/config/onlyoffice
+tee -a $HOME/.var/app/org.onlyoffice.desktopeditors/config/onlyoffice/DesktopEditors.conf &>/dev/null << EOF
+editorWindowMode=true
+EOF
 
 echo "___________________________________________________________________________________"
 echo "                                                                                   "
@@ -101,8 +104,10 @@ EOF
 sudo wget -P /etc/dconf/db/local.d https://raw.githubusercontent.com/zilexa/Bluefin-Gnome-ReadyToGo-Desktop/main/00-gnome-intuitive
 sudo dconf update
 
-echo        "Configure FIREFOX"
-echo "___________________________________"
+echo "___________________________________________________________________________________"
+echo "                                                                                   "
+echo "     FIREFOX - essential extensions + clean toolbar layout + related settings      "
+echo "___________________________________________________________________________________"
 # For current and future system users and profiles
 # Create default policies (install minimal set of extensions and theme, enable syncing of your toolbar layout, disable default Mozilla bookmarks)
 # first delete existing profiles
@@ -131,17 +136,10 @@ sudo tee -a /var/lib/flatpak/extension/org.mozilla.firefox.systemconfig/x86_64/s
 }
 EOF
 
-
-echo "Configure ONLYOFFICE DESKTOPEDITORS" 
-echo "___________________________________"
-# Enable dark mode, use separate windows instead of tabs
-mkdir -p $HOME/.var/app/org.onlyoffice.desktopeditors/config/onlyoffice
-tee -a $HOME/.var/app/org.onlyoffice.desktopeditors/config/onlyoffice/DesktopEditors.conf &>/dev/null << EOF
-editorWindowMode=true
-EOF
-
-echo "Get & install all MS Office365 fonts"
-echo "___________________________________"
+echo "___________________________________________________________________________________"
+echo "                                                                                   "
+echo "       Install all MS OFFICE465 FONTS - required for document compatibility        "
+echo "___________________________________________________________________________________"
 # Get a script that uses MEGA api to donwload a file
 wget -P $HOME/Downloads/ https://raw.githubusercontent.com/tonikelope/megadown/refs/heads/master/megadown
 # Get the fonts via MEGA
