@@ -25,6 +25,14 @@ echo "__________________________________________________________________________
 # Install applications/tools via the proper method (Flatpak)
 # Install Gearlever, a tool to install/integrate AppImage versions of Apps (for apps not available on Flathub/Bazaar)
 flatpak install -y flathub  it.mijorus.gearlever
+# Collabora Office (for OpenDocument files, supports MS Office files as well)
+flatpak install -y flathub com.collaboraoffice.Office
+# OnlyOffice (Simpler suite, only for Microsoft Office files)
+flatpak install -y flathub org.onlyoffice.desktopeditors
+# Tool to sync a folder to external drive, incremental changes only (to backup your personal files to an external drive) 
+org.freefilesync.FreeFileSync
+# Music player Amberol
+flatpak install -y flathub io.bassi.Amberol
 # Music editor tool
 flatpak install -y flathub org.audacityteam.Audacity
 # Image editor tool
@@ -33,14 +41,10 @@ flatpak install -y flathub com.github.PintaProject.Pinta
 flatpak install -y fedora org.gimp.GIMP  
 # Video converter
 flatpak install -y flathub app/fr.handbrake.ghb/x86_64/stable
-# Video trimmer, converter, merger
+# Video trimmer, simple & lossless
+org.gnome.gitlab.YaLTeR.VideoTrimmer
+# Video trimmer, lossless, with more options, converter, merger
 flatpak install -y flathub losslesscut
-# Collabora Office (for OpenDocument files, supports MS Office files as well)
-flatpak install -y flathub com.collaboraoffice.Office
-# OnlyOffice (Simpler suite, only for Microsoft Office files)
-flatpak install -y flathub org.onlyoffice.desktopeditors
-# OnlyOffice (Simpler suite, only for Microsoft Office files)
-flatpak install -y flathub org.onlyoffice.desktopeditors
 
 echo "___________________________________________________________________________________"
 echo "                                                                                   "
@@ -70,7 +74,6 @@ bash install-gnome-extensions.sh --enable 1262
 #remove the script used to install extensions. 
 rm install-gnome-extensions.sh 
 
-
 echo "___________________________________________________________________________________"
 echo "                                                                                   " 
 echo "            GNOME - Intuitive configuration for Gnome, Extensions, Apps            "
@@ -86,7 +89,6 @@ EOF
 # Download the Gnome Intuitive configuration and apply
 sudo wget -P /etc/dconf/db/local.d https://raw.githubusercontent.com/zilexa/Gnome-Post-Install-Configuration/main/00-gnome-intuitive
 sudo dconf update
-
 
 echo        "Configure FIREFOX"
 echo "___________________________________"
@@ -125,7 +127,6 @@ tee -a $HOME/.var/app/onlyoffice/DesktopEditors.conf &>/dev/null << EOF
 UITheme=theme-dark
 editorWindowMode=true
 EOF
-
 
 echo "Get & install all MS Office365 fonts"
 echo "___________________________________"
