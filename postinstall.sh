@@ -111,9 +111,9 @@ echo "__________________________________________________________________________
 # For current and future system users and profiles
 # Create default policies (install minimal set of extensions and theme, enable syncing of your toolbar layout, disable default Mozilla bookmarks)
 # first delete existing profiles
-rm -r $HOME/.var/app/org.mozilla.firefox/.mozilla/firefox/*.default*
+rm -r $HOME/.var/app/org.mozilla.firefox/config/mozilla/firefox/*.default*
+rm $HOME/.var/app/org.mozilla.firefox/config/mozilla/firefox/profiles.ini
 rm -r $HOME/.var/app/org.mozilla.firefox/cache/mozilla/firefox/*.default*
-rm $HOME/.var/app/org.mozilla.firefox/.mozilla/firefox/profiles.ini
 
 # Create default firefox policies
 sudo mkdir -p /var/lib/flatpak/extension/org.mozilla.firefox.systemconfig/x86_64/stable/policies
@@ -123,16 +123,24 @@ sudo tee -a /var/lib/flatpak/extension/org.mozilla.firefox.systemconfig/x86_64/s
     "DisableProfileImport": true,
     "NoDefaultBookmarks": true,
     "DisplayBookmarksToolbar": "always",
-    "Extensions": { 
-      "Install": ["https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi", "https://gitflic.ru/project/magnolia1234/bpc_uploads/blob/raw?file=bypass_paywalls_clean-latest.xpi", "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi", "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi", "https://addons.mozilla.org/firefox/downloads/latest/nord-polar-night-theme/latest.xpi"]}
+    "Extensions": {
+      "Install": [
+        "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi",
+        "https://gitflic.ru/project/magnolia1234/bpc_uploads/blob/raw?file=bypass_paywalls_clean-latest.xpi",
+        "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi",
+        "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi",
+        "https://addons.mozilla.org/firefox/downloads/latest/nord-polar-night-theme/latest.xpi"
+      ]
     },
     "Preferences": {
-      "extensions.unifiedExtensions.button.always_visible": false, 
+      "extensions.unifiedExtensions.button.always_visible": false,
       "services.sync.prefs.sync.browser.uiCustomization.state": true,
       "browser.uiCustomization.state": {
-        "Value": "{"placements":{"widget-overflow-fixed-list":[],"unified-extensions-area":["sponsorblocker_ajay_app-browser-action","magnolia_12_34-browser-action","_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action"],"nav-bar":["sidebar-button","back-button","forward-button","stop-reload-button","customizableui-special-spring1","vertical-spacer","downloads-button","ublock0_raymondhill_net-browser-action","urlbar-container","customizableui-special-spring2","unified-extensions-button"],"toolbar-menubar":["menubar-items"],"TabsToolbar":["tabbrowser-tabs","new-tab-button","alltabs-button"],"vertical-tabs":[],"PersonalToolbar":["fxa-toolbar-menu-button","history-panelmenu","firefox-view-button","import-button","personal-bookmarks"]},"seen":["developer-button","screenshot-button","magnolia_12_34-browser-action","sponsorblocker_ajay_app-browser-action","ublock0_raymondhill_net-browser-action","_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action"],"dirtyAreaCache":["nav-bar","vertical-tabs","PersonalToolbar","toolbar-menubar","TabsToolbar","unified-extensions-area","widget-overflow-fixed-list"],"currentVersion":23,"newElementCount":6}",
-        "Status": "default" }
-  }    
+        "Value": "{\"placements\":{\"widget-overflow-fixed-list\":[],\"unified-extensions-area\":[\"sponsorblocker_ajay_app-browser-action\",\"magnolia_12_34-browser-action\",\"_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action\"],\"nav-bar\":[\"sidebar-button\",\"back-button\",\"forward-button\",\"stop-reload-button\",\"customizableui-special-spring1\",\"vertical-spacer\",\"downloads-button\",\"ublock0_raymondhill_net-browser-action\",\"urlbar-container\",\"customizableui-special-spring2\",\"unified-extensions-button\"],\"toolbar-menubar\":[\"menubar-items\"],\"TabsToolbar\":[\"tabbrowser-tabs\",\"new-tab-button\",\"alltabs-button\"],\"vertical-tabs\":[],\"PersonalToolbar\":[\"fxa-toolbar-menu-button\",\"history-panelmenu\",\"firefox-view-button\",\"import-button\",\"personal-bookmarks\"]},\"seen\":[\"developer-button\",\"screenshot-button\",\"magnolia_12_34-browser-action\",\"sponsorblocker_ajay_app-browser-action\",\"ublock0_raymondhill_net-browser-action\",\"_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action\"],\"dirtyAreaCache\":[\"nav-bar\",\"vertical-tabs\",\"PersonalToolbar\",\"toolbar-menubar\",\"TabsToolbar\",\"unified-extensions-area\",\"widget-overflow-fixed-list\"],\"currentVersion\":23,\"newElementCount\":6}",
+        "Status": "default"
+      }
+    }
+  }
 }
 EOF
 
