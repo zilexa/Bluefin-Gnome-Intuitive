@@ -30,7 +30,7 @@ flatpak install -y flathub com.collaboraoffice.Office
 # OnlyOffice (Simpler suite, only for Microsoft Office files)
 flatpak install -y flathub org.onlyoffice.desktopeditors
 # Tool to sync a folder to external drive, incremental changes only (to backup your personal files to an external drive) 
-org.freefilesync.FreeFileSync
+flatpak install -y org.freefilesync.FreeFileSync
 # Music player Amberol
 flatpak install -y flathub io.bassi.Amberol
 # Music editor tool
