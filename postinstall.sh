@@ -4,7 +4,7 @@ echo "                                                                          
 echo "                           REMOVE UNNECESSARY APPS                                "
 echo "___________________________________________________________________________________"
 # Remove apps that 99% of regular users will never use (offline mail app; linux distro loader; a backup tool that requires the tool to view/recover the files; a tool to create bootable usb drives) 
-flatpak uninstall -y --delete-data org.mozilla.Thunderbird io.github.mrvladus.DistroShelf org.gnome.DejaDup io.gitlab.adhami3310.Impression
+flatpak uninstall -y --delete-data org.mozilla.Thunderbird com.ranfdev.DistroShelf org.gnome.DejaDup io.gitlab.adhami3310.Impression
 flatpak uninstall -y --unused
 
 echo "___________________________________________________________________________________"
