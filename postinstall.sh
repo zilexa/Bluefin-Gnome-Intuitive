@@ -107,24 +107,25 @@ sudo tee -a /var/lib/flatpak/extension/org.mozilla.firefox.systemconfig/x86_64/s
     "DisableProfileImport": true,
     "NoDefaultBookmarks": true,
     "DisplayBookmarksToolbar": "always",
-    "Preferences": {
-      "extensions.unifiedExtensions.button.always_visible": false, 
-      "browser.uiCustomization.state": {
-        "Value": "{\"placements\":{\"widget-overflow-fixed-list\":[],\"unified-extensions-area\":[\"sponsorblocker_ajay_app-browser-action\",\"magnolia_12_34-browser-action\"],\"nav-bar\":[\"sidebar-button\",\"back-button\",\"forward-button\",\"stop-reload-button\",\"customizableui-special-spring1\",\"vertical-spacer\",\"downloads-button\",\"ublock0_raymondhill_net-browser-action\",\"urlbar-container\",\"customizableui-special-spring2\",\"unified-extensions-button\",\"_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action\"],\"toolbar-menubar\":[\"menubar-items\"],\"TabsToolbar\":[],\"vertical-tabs\":[\"tabbrowser-tabs\"],\"PersonalToolbar\":[\"fxa-toolbar-menu-button\",\"history-panelmenu\",\"firefox-view-button\",\"personal-bookmarks\"]},\"seen\":[\"developer-button\",\"magnolia_12_34-browser-action\",\"ublock0_raymondhill_net-browser-action\",\"sponsorblocker_ajay_app-browser-action\",\"screenshot-button\",\"_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action\"],\"dirtyAreaCache\":[\"nav-bar\",\"vertical-tabs\",\"unified-extensions-area\",\"PersonalToolbar\",\"TabsToolbar\",\"toolbar-menubar\"],\"currentVersion\":23,\"newElementCount\":7}",
-        "Status": "default" }
-    },
     "Extensions": { 
       "Install": ["https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi", "https://gitflic.ru/project/magnolia1234/bpc_uploads/blob/raw?file=bypass_paywalls_clean-latest.xpi", "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi", "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi", "https://addons.mozilla.org/firefox/downloads/latest/nord-polar-night-theme/latest.xpi"]}
+    },
+    "Preferences": {
+      "extensions.unifiedExtensions.button.always_visible": false, 
+      "services.sync.prefs.sync.browser.uiCustomization.state": true,
+      "browser.uiCustomization.state": {
+        "Value": "{"placements":{"widget-overflow-fixed-list":[],"unified-extensions-area":["sponsorblocker_ajay_app-browser-action","magnolia_12_34-browser-action","_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action"],"nav-bar":["sidebar-button","back-button","forward-button","stop-reload-button","customizableui-special-spring1","vertical-spacer","downloads-button","ublock0_raymondhill_net-browser-action","urlbar-container","customizableui-special-spring2","unified-extensions-button"],"toolbar-menubar":["menubar-items"],"TabsToolbar":["tabbrowser-tabs","new-tab-button","alltabs-button"],"vertical-tabs":[],"PersonalToolbar":["fxa-toolbar-menu-button","history-panelmenu","firefox-view-button","import-button","personal-bookmarks"]},"seen":["developer-button","screenshot-button","magnolia_12_34-browser-action","sponsorblocker_ajay_app-browser-action","ublock0_raymondhill_net-browser-action","_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action"],"dirtyAreaCache":["nav-bar","vertical-tabs","PersonalToolbar","toolbar-menubar","TabsToolbar","unified-extensions-area","widget-overflow-fixed-list"],"currentVersion":23,"newElementCount":6}",
+        "Status": "default" }
   }    
 }
 EOF
 
+
 echo "Configure ONLYOFFICE DESKTOPEDITORS" 
 echo "___________________________________"
 # Enable dark mode, use separate windows instead of tabs
-mkdir -p $HOME/.var/app/onlyoffice
-tee -a $HOME/.var/app/onlyoffice/DesktopEditors.conf &>/dev/null << EOF
-UITheme=theme-dark
+mkdir -p $HOME/.var/app/org.onlyoffice.desktopeditors/config/onlyoffice
+tee -a $HOME/.var/app/org.onlyoffice.desktopeditors/config/onlyoffice/DesktopEditors.conf &>/dev/null << EOF
 editorWindowMode=true
 EOF
 
@@ -144,6 +145,6 @@ tar -xvf $HOME/Downloads/fonts-office365.tar.xz -C $HOME/.local/share/fonts
 fc-cache -f -v
 # Remove the downloaded font file
 rm $HOME/Downloads/fonts-office365.tar.xz
-
+echo ""
 echo "Completed successfully, please close this window and reboot!"
 
