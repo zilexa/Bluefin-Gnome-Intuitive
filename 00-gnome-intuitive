@@ -51,7 +51,7 @@ night-light-schedule-to=8.75
 
 [org/gnome/nautilus/preferences]
 date-format='iso'
-
+default-folder-viewer='list-view'
 [org/gnome/nautilus/list-view]
 default-visible-columns=['name', 'size', 'type', 'date_modified', 'date_created']
 
