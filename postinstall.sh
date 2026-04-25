@@ -1,21 +1,29 @@
 #!/bin/bash
 echo "___________________________________________________________________________________"
 echo "                                                                                   "
+echo "                           REMOVE UNNECESSARY APPS                                "
+echo "___________________________________________________________________________________"
+flatpak uninstall -y --delete-data org.mozilla.Thunderbird io.github.mrvladus.DistroShelf org.gnome.DejaDup io.gitlab.adhami3310.Impression
+flatpak uninstall -y --unused
+
+
+echo "___________________________________________________________________________________"
+echo "                                                                                   "
 echo "                           GET LANGUAGE INFO FROM USER                             "
 echo "___________________________________________________________________________________"
 # Get language & region info
-#echo "___________________________________________________________________"
-#read -p "Besides English, would you like spellchecker support for another language? (y/n)" answer
-#case ${answer:0:1} in
-#    y|Y )
-#    echo "Please type the 2-letter countrycode for the language, for example "de" for German language (no caps):"
-#    echo "___________________________________________________________________"
-#    read -p 'countrycode for example "de" and hit ENTER: ' LANG
-#    flatpak config --system --set languages "en;$LANG"
-#    flatpak update -y ;;
-#    n|N ) ;;
-#    * ) ;;
-#esac
+echo "___________________________________________________________________"
+read -p "Besides English, would you like spellchecker support for another language? (y/n)" answer
+case ${answer:0:1} in
+    y|Y )
+    echo "Please type the 2-letter countrycode for the language, for example "de" for German language (no caps):"
+    echo "___________________________________________________________________"
+    read -p 'countrycode for example "de" and hit ENTER: ' LANG
+    flatpak config --system --set languages "en;$LANG"
+    flatpak update -y ;;
+    n|N ) ;;
+    * ) ;;
+esac
 
 
 echo "___________________________________________________________________________________"
@@ -23,8 +31,10 @@ echo "                                                                          
 echo "               APPLICATIONS - Install required and recommended apps                "
 echo "___________________________________________________________________________________"
 # Install applications/tools via the proper method (Flatpak)
-# Install Gearlever, a tool to install/integrate AppImage versions of Apps (for apps not available on Flathub/Bazaar)
-flatpak install -y flathub  it.mijorus.gearlever
+# Install Gearlever, a tool to install/integrate AppImage versions of Apps (for apps that are not available via Bazaar/are not on Flathub.org)
+flatpak install -y flathub it.mijorus.gearlever
+# Install CameraCtrls - to adjust webcam video quality settings, required on Linux for laptop webcams that are not fully supported. 
+flatpak install -y flathub hu.irl.cameractrls
 # Collabora Office (for OpenDocument files, supports MS Office files as well)
 flatpak install -y flathub com.collaboraoffice.Office
 # OnlyOffice (Simpler suite, only for Microsoft Office files)
@@ -42,9 +52,10 @@ flatpak install -y fedora org.gimp.GIMP
 # Video converter
 flatpak install -y flathub app/fr.handbrake.ghb/x86_64/stable
 # Video trimmer, simple & lossless
-org.gnome.gitlab.YaLTeR.VideoTrimmer
+flatpak install -y org.gnome.gitlab.YaLTeR.VideoTrimmer
 # Video trimmer, lossless, with more options, converter, merger
 flatpak install -y flathub losslesscut
+
 
 echo "___________________________________________________________________________________"
 echo "                                                                                   "
