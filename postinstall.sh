@@ -9,7 +9,7 @@ flatpak uninstall -y --unused
 
 echo "___________________________________________________________________________________"
 echo "                                                                                   "
-echo "                           GET LANGUAGE INFO FROM USER                             "
+echo "   Add a language for flatpak apps (required for Office apps, spellcheckers etc)   "
 echo "___________________________________________________________________________________"
 # Get language & region info
 echo "___________________________________________________________________"
