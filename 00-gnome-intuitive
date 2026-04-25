@@ -62,6 +62,8 @@ favorite-apps=['org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'org
 
 # Extension: Dash-to-Panel configuration
 [org/gnome/shell/extensions/dash-to-panel]
+isolate-monitors=true
+hide-overview-on-startup=true
 animate-appicon-hover=true
 animate-appicon-hover-animation-convexity={'RIPPLE': 2.0, 'PLANK': 1.0, 'SIMPLE': 0.0}
 animate-appicon-hover-animation-extent={'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}
@@ -82,7 +84,6 @@ trans-gradient-bottom-opacity=0.35000000000000003
 trans-panel-opacity=0.45000000000000001
 tray-padding=-1
 window-preview-title-position='TOP'
-isolate-monitors=true
 
 # Extension: Arcmenu
 [org/gnome/shell/extensions/arcmenu]
