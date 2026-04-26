@@ -159,3 +159,6 @@ icon-name='mid-frame-symbolic'
 # Extension: Search Light
 [org/gnome/shell/extensions/search-light]
 shortcut-search=['<Super>space']
+
+[org/gnome/shell/extensions/gtk4-ding]
+show-trash=false
