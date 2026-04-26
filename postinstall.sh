@@ -193,10 +193,10 @@ echo "__________________________________________________________________________
 # This is dumb, since that will cost time and effort. Install the library to continue support of app icons in systray for pre-gtk4 apps
 rpm-ostree install -y libayatana-appindicator-gtk3
 
-# Start Tailscale
+# Start Tailscale systray
 tailscale configure systray --enable-startup=systemd
-
+sudo tailscale set --operator=$USER
+systemctl --user enable --now tailscale-systray
 
 echo ""
 echo "Completed successfully, please close this window and reboot!"
-
