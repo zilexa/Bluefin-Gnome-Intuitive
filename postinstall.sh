@@ -175,11 +175,27 @@ mkdir $HOME/Media
 xdg-user-dirs-update --set VIDEOS "$HOME/Media"
 xdg-user-dirs-update
 # Now remove the disabled folders
-rmdir ~/Videos
-rmdir ~/Public
+rmdir ~/Videos ~/Public
 # And update the bookmarks in Nautilus File Manager
-sed -i "/\b\(Videos\)\b/d" ~/.config/gtk-3.0/bookmarks
-echo "file:///$HOME/Media" >> $HOME/.config/gtk-3.0/bookmarks
+cat <<EOF > "$HOME/.config/gtk-3.0/bookmarks"
+file://$HOME/Downloads Downloads
+file://$HOME/Documents Documents
+file://$HOME/Pictures Pictures
+file://$HOME/Music Music
+file://$HOME/Media Media
+EOF
+
+echo "___________________________________________________________________________________"
+echo "                                                                                   "
+echo "                                Other inconveniences                               "
+echo "___________________________________________________________________________________"
+# Since Gnome 48, App icons are not shown in the systray, because Gnome wants app developers to migrate to gtk4.
+# This is dumb, since that will cost time and effort. Install the library to continue support of app icons in systray for pre-gtk4 apps
+rpm-ostree install -y libayatana-appindicator-gtk3
+
+# Start Tailscale
+tailscale configure systray --enable-startup=systemd
+
 
 echo ""
 echo "Completed successfully, please close this window and reboot!"
