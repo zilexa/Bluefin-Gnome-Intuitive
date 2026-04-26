@@ -162,6 +162,20 @@ tar -xvf $HOME/Downloads/fonts-office365.tar.xz -C $HOME/.local/share/fonts
 fc-cache -f -v
 # Remove the downloaded font file
 rm $HOME/Downloads/fonts-office365.tar.xz
+
+
+echo "___________________________________________________________________________________"
+echo "                                                                                   "
+echo "                Simplify: remove/rename unnecessary folders in Home                "
+echo "___________________________________________________________________________________"
+# Remove the Public folder, the official way to do so is described here: 
+xdg-user-dirs-update --set PUBLICSHARE "$HOME"
+# Rename the Videos folder to Media, more generic 
+xdg-user-dirs-update --set VIDEOS "$HOME/Media"
+xdg-user-dirs-update
+rmdir ~/Videos
+rmdir ~/Public
+
 echo ""
 echo "Completed successfully, please close this window and reboot!"
 
