@@ -170,7 +170,9 @@ echo "             Simplify folder structure and populate Templates folder      
 echo "___________________________________________________________________________________"
 # Create empty files in Templates to be able to create these new files via File Manager
 # Plain text (empty is fine)
-touch ~/Templates/"New Text File.txt"
+touch ~/Templates/"New Text file.txt"
+touch ~/Templates/"New Markdown file.md"
+touch ~/Templates/"New CSV file.csv"
 # ODF formats (need a valid mimetype ZIP entry)
 python3 - << 'EOF'
 import zipfile, os
