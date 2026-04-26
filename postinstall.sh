@@ -194,9 +194,9 @@ echo "__________________________________________________________________________
 rpm-ostree install -y libayatana-appindicator-gtk3
 
 # Start Tailscale systray
-tailscale configure systray --enable-startup=systemd
-sudo tailscale set --operator=$USER
-systemctl --user enable --now tailscale-systray
+#tailscale configure systray --enable-startup=systemd
+#sudo tailscale set --operator=$USER
+#systemctl --user enable --now tailscale-systray
 
 echo ""
 echo "Completed successfully, please close this window and reboot!"
