@@ -168,13 +168,18 @@ echo "__________________________________________________________________________
 echo "                                                                                   "
 echo "                Simplify: remove/rename unnecessary folders in Home                "
 echo "___________________________________________________________________________________"
-# Remove the Public folder, the official way to do so is described here: 
+# Disable the "Public" folder in Home, it has no function: 
 xdg-user-dirs-update --set PUBLICSHARE "$HOME"
-# Rename the Videos folder to Media, more generic 
+# Rename the Videos folder to Media, more generic, could be used ask working folder for video editing or form torrent downloads
+mkdir $HOME/Media
 xdg-user-dirs-update --set VIDEOS "$HOME/Media"
 xdg-user-dirs-update
+# Now remove the disabled folders
 rmdir ~/Videos
 rmdir ~/Public
+# And update the bookmarks in Nautilus File Manager
+sed -i "/\b\(Videos\)\b/d" ~/.config/gtk-3.0/bookmarks
+echo "file:///$HOME/Media" >> $HOME/.config/gtk-3.0/bookmarks
 
 echo ""
 echo "Completed successfully, please close this window and reboot!"
