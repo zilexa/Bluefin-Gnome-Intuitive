@@ -169,10 +169,24 @@ echo "                                                                          
 echo "             Simplify folder structure and populate Templates folder               "
 echo "___________________________________________________________________________________"
 # Create empty files in Templates to be able to create these new files via File Manager
-touch ~/Templates/"New Text File.txt" \
-      ~/Templates/"New Document.odt" \
-      ~/Templates/"New Spreadsheet.ods" \
-      ~/Templates/"New Presentation.odp"
+# Plain text (empty is fine)
+touch ~/Templates/"New Text File.txt"
+# ODF formats (need a valid mimetype ZIP entry)
+python3 - << 'EOF'
+import zipfile, os
+
+def make_odf(path, mimetype):
+    with zipfile.ZipFile(path, 'w', zipfile.ZIP_STORED) as z:
+        info = zipfile.ZipInfo('mimetype')
+        info.compress_type = zipfile.ZIP_STORED
+        z.writestr(info, mimetype)
+
+t = os.path.expanduser('~/Templates')
+make_odf(f'{t}/New Document.odt',    'application/vnd.oasis.opendocument.text')
+make_odf(f'{t}/New Spreadsheet.ods', 'application/vnd.oasis.opendocument.spreadsheet')
+make_odf(f'{t}/New Presentation.odp','application/vnd.oasis.opendocument.presentation')
+EOF
+echo "Templates created."
       
 # Disable the "Public" folder in Home, it has no function: 
 xdg-user-dirs-update --set PUBLICSHARE "$HOME"
