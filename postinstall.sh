@@ -166,8 +166,14 @@ rm $HOME/Downloads/fonts-office365.tar.xz
 
 echo "___________________________________________________________________________________"
 echo "                                                                                   "
-echo "                Simplify: remove/rename unnecessary folders in Home                "
+echo "             Simplify folder structure and populate Templates folder               "
 echo "___________________________________________________________________________________"
+# Create empty files in Templates to be able to create these new files via File Manager
+touch ~/Templates/"New Text File.txt" \
+      ~/Templates/"New Document.odt" \
+      ~/Templates/"New Spreadsheet.ods" \
+      ~/Templates/"New Presentation.odp"
+      
 # Disable the "Public" folder in Home, it has no function: 
 xdg-user-dirs-update --set PUBLICSHARE "$HOME"
 # Rename the Videos folder to Media, more generic, could be used ask working folder for video editing or form torrent downloads
@@ -184,6 +190,7 @@ file://$HOME/Pictures Pictures
 file://$HOME/Music Music
 file://$HOME/Media Media
 EOF
+
 
 echo "___________________________________________________________________________________"
 echo "                                                                                   "
