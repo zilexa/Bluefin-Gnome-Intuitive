@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 echo "___________________________________________________________________________________"
 echo "                                                                                   "
 echo "                           REMOVE UNNECESSARY APPS                                "
@@ -35,7 +35,7 @@ flatpak install -y flathub it.mijorus.gearlever
 # Install CameraCtrls - to adjust webcam video quality settings, required on Linux for laptop webcams that are not fully supported. 
 flatpak install -y flathub hu.irl.cameractrls
 # Tool to sync a folder to external drive, incremental changes only (to backup your personal files to an external drive) 
-flatpak install -y org.freefilesync.FreeFileSync
+flatpak install -y flathub org.freefilesync.FreeFileSync
 # Music player Amberol
 flatpak install -y flathub io.bassi.Amberol
 # Music editor tool
@@ -43,20 +43,20 @@ flatpak install -y flathub org.audacityteam.Audacity
 # Image editor tool
 flatpak install -y flathub com.github.PintaProject.Pinta
 # GIMP advanced image editor
-flatpak install -y fedora org.gimp.GIMP  
+flatpak install -y flathub org.gimp.GIMP  
 # Video converter
-flatpak install -y flathub app/fr.handbrake.ghb/x86_64/stable
+flatpak install -y flathub fr.handbrake.ghb
 # Video trimmer, simple & lossless
-flatpak install -y org.gnome.gitlab.YaLTeR.VideoTrimmer
+flatpak install -y flathub org.gnome.gitlab.YaLTeR.VideoTrimmer
 # Video trimmer, lossless, with more options, converter, merger
-flatpak install -y flathub losslesscut
+flatpak install -y flathub no.mifi.losslesscut
 # Collabora Office (for OpenDocument files, supports MS Office files as well)
 flatpak install -y flathub com.collaboraoffice.Office
 # OnlyOffice (Simpler suite, only for Microsoft Office files)
 flatpak install -y flathub org.onlyoffice.desktopeditors
 # OnlyOffice: create its config file, add the setting to always open docs in their own window instead of tabs
 mkdir -p $HOME/.var/app/org.onlyoffice.desktopeditors/config/onlyoffice
-tee -a $HOME/.var/app/org.onlyoffice.desktopeditors/config/onlyoffice/DesktopEditors.conf &>/dev/null << EOF
+tee $HOME/.var/app/org.onlyoffice.desktopeditors/config/onlyoffice/DesktopEditors.conf &>/dev/null << EOF
 editorWindowMode=true
 EOF
 
@@ -67,26 +67,26 @@ echo "__________________________________________________________________________
 #Install extensions that cannot be installed+autoupdated system-wide on Fedora SilverBlue  
 wget -P $HOME/Downloads/ https://raw.githubusercontent.com/ToasterUwU/install-gnome-extensions/master/install-gnome-extensions.sh
 # Dash-to-Panel (dash-to-panel@jderose9.github.com)
-bash install-gnome-extensions.sh --enable 1160
+bash $HOME/Downloads/install-gnome-extensions.sh --enable 1160
 # ArcMenu (arcmenu@arcmenu.com)
-bash install-gnome-extensions.sh --enable 3628
+bash $HOME/Downloads/install-gnome-extensions.sh --enable 3628
 # Tiling Shell (tilingshell@ferrarodomenico.com)
-bash install-gnome-extensions.sh --enable 7065
+bash $HOME/Downloads/install-gnome-extensions.sh --enable 7065
 # Allow Locked Remote Desktop (allowlockedremotedesktop@kamens.us)
-bash install-gnome-extensions.sh --enable 3193
+bash $HOME/Downloads/install-gnome-extensions.sh --enable 3193
 # Desktop Icons (gtk4-ding@smedius.gitlab.com)
-bash install-gnome-extensions.sh --enable 4338
+bash $HOME/Downloads/install-gnome-extensions.sh --enable 4338
 # Blur My Shell ()
-bash install-gnome-extensions.sh --enable 5263
+bash $HOME/Downloads/install-gnome-extensions.sh --enable 5263
 # Removable Drive menu (drive-menu@gnome-shell-extensions.gcampax.github.com)
-bash install-gnome-extensions.sh --enable 7
+bash $HOME/Downloads/install-gnome-extensions.sh --enable 7
 # Custom Hot Corners (custom-hot-corners-extended@G-dH.github.com)
-bash install-gnome-extensions.sh --enable 4167
+bash $HOME/Downloads/install-gnome-extensions.sh --enable 4167
 # Bing Wallpaper (BingWallpaper@ineffable-gmail.com)
 mkdir -p $HOME/Pictures/Wallpapers
-bash install-gnome-extensions.sh --enable 1262
+bash $HOME/Downloads/install-gnome-extensions.sh --enable 1262
 #remove the script used to install extensions. 
-rm install-gnome-extensions.sh 
+rm $HOME/Downloads/install-gnome-extensions.sh 
 
 echo "___________________________________________________________________________________"
 echo "                                                                                   " 
@@ -111,13 +111,13 @@ echo "__________________________________________________________________________
 # For current and future system users and profiles
 # Create default policies (install minimal set of extensions and theme, enable syncing of your toolbar layout, disable default Mozilla bookmarks)
 # first delete existing profiles
-rm -r $HOME/.var/app/org.mozilla.firefox/config/mozilla/firefox/*.default*
-rm $HOME/.var/app/org.mozilla.firefox/config/mozilla/firefox/profiles.ini
-rm -r $HOME/.var/app/org.mozilla.firefox/cache/mozilla/firefox/*.default*
+rm -f -r $HOME/.var/app/org.mozilla.firefox/config/mozilla/firefox/*.default*
+rm -f $HOME/.var/app/org.mozilla.firefox/config/mozilla/firefox/profiles.ini
+rm -f -r $HOME/.var/app/org.mozilla.firefox/cache/mozilla/firefox/*.default*
 
 # Create default firefox policies
 sudo mkdir -p /var/lib/flatpak/extension/org.mozilla.firefox.systemconfig/x86_64/stable/policies
-sudo tee -a /var/lib/flatpak/extension/org.mozilla.firefox.systemconfig/x86_64/stable/policies/policies.json &>/dev/null << EOF
+sudo tee /var/lib/flatpak/extension/org.mozilla.firefox.systemconfig/x86_64/stable/policies/policies.json &>/dev/null << EOF
 {
   "policies": {
     "DisableProfileImport": true,
