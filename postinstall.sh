@@ -221,6 +221,8 @@ sudo mkswap --file -L SWAPFILE --size $SWAPSIZE /var/swap/swapfile
 sudo bash -c 'echo /var/swap/swapfile none swap defaults 0 0 >>/etc/fstab'
 sudo swapon -av
 
+# if Hibernation does not work, SELinux needs to be configured. Not part of this script. 
+
 # Now configure the system: Power key -> hibernate. When the system is idle for 30min or when closing the laptop -> suspend for 75min then hibernate (zero power consumption, to prevent battery drain). 
 sudo mkdir -p /etc/systemd/logind.conf.d
 sudo tee /etc/systemd/logind.conf.d/lid.conf > /dev/null <<EOF
