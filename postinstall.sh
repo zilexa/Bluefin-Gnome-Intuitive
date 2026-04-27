@@ -210,16 +210,51 @@ EOF
 
 echo "___________________________________________________________________________________"
 echo "                                                                                   "
+echo "                   Enable Hibernation and Suspend-then-Hibernate                   "
+echo "___________________________________________________________________________________"
+# For hibernation to work, the RAM memory has to be written to the Storage device, specifically for the BTRFS filesystem: to a subvolume. This is better than a separate partition as it will keep your SSD healthy. 
+SWAPSIZE=$(free | awk '/Mem/ {x=$2/1024/1024; printf "%.0fG", (x<2 ? 2*x : x<8 ? 1.5*x : x) }')
+sudo btrfs subvolume create /var/swap
+sudo chattr +C /var/swap
+sudo restorecon /var/swap
+sudo mkswap --file -L SWAPFILE --size $SWAPSIZE /var/swap/swapfile
+sudo bash -c 'echo /var/swap/swapfile none swap defaults 0 0 >>/etc/fstab'
+sudo swapon -av
+
+# Now configure the system: Power key -> hibernate. When the system is idle for 30min or when closing the laptop -> suspend for 75min then hibernate (zero power consumption, to prevent battery drain). 
+sudo mkdir -p /etc/systemd/logind.conf.d
+sudo tee /etc/systemd/logind.conf.d/lid.conf > /dev/null <<EOF
+[Login]
+HandlePowerKey=hibernate
+HandleLidSwitch=suspend-then-hibernate
+LidSwitchIgnoreInhibited=yes
+HoldoffTimeoutSec=20s
+IdleAction=suspend-then-hibernate
+IdleActionSec=30min
+EOF
+
+echo "Creating /etc/systemd/sleep.conf.d/sleep.conf ..."
+sudo mkdir -p /etc/systemd/sleep.conf.d
+sudo tee /etc/systemd/sleep.conf.d/sleep.conf > /dev/null <<EOF
+[Sleep]
+HibernateDelaySec=75min
+EOF
+
+
+echo "___________________________________________________________________________________"
+echo "                                                                                   "
 echo "                                Other inconveniences                               "
 echo "___________________________________________________________________________________"
 # Since Gnome 48, App icons are not shown in the systray, because Gnome wants app developers to migrate to gtk4.
 # This is dumb, since that will cost time and effort. Install the library to continue support of app icons in systray for pre-gtk4 apps
 rpm-ostree install -y libayatana-appindicator-gtk3
 
+
+
 # Start Tailscale systray
-#tailscale configure systray --enable-startup=systemd
-#sudo tailscale set --operator=$USER
-#systemctl --user enable --now tailscale-systray
+# tailscale configure systray --enable-startup=systemd
+# sudo tailscale set --operator=$USER
+# systemctl --user enable --now tailscale-systray
 
 echo ""
 echo "Completed successfully, please close this window and reboot!"
