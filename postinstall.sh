@@ -64,7 +64,7 @@ echo "__________________________________________________________________________
 echo "                                                                                   "
 echo "           GNOME EXTENSIONS - Required for usable and intuitive system             "
 echo "___________________________________________________________________________________"
-#Install extensions that cannot be installed+autoupdated system-wide on Fedora SilverBlue  
+#Install extensions, required for the configuration that will be applied in the next step (00-gnome-intuitive)
 wget -P $HOME/Downloads/ https://raw.githubusercontent.com/ToasterUwU/install-gnome-extensions/master/install-gnome-extensions.sh
 # Dash-to-Panel (dash-to-panel@jderose9.github.com)
 bash $HOME/Downloads/install-gnome-extensions.sh --enable 1160
@@ -92,8 +92,8 @@ echo "__________________________________________________________________________
 echo "                                                                                   " 
 echo "            GNOME - Intuitive configuration for Gnome, Extensions, Apps            "
 echo "___________________________________________________________________________________"
-# To override distribution defaults and create your own for all (future and current users)
-# See here: https://help.gnome.org/admin/system-admin-guide/stable/dconf-custom-defaults.html.en
+# Apply Gnome configurations, using the method recommended by Gnome. Documentation: https://help.gnome.org/admin/system-admin-guide/stable/dconf-custom-defaults.html.en
+# This is applied system-wide, however, the enxtensions were installed for this user only. New users will need to manually install those extentsions for this configuration to work as intended. 
 # First create a dconf profile
 sudo mkdir -p /etc/dconf/profile
 sudo tee /etc/dconf/profile/user &>/dev/null << EOF
@@ -108,8 +108,7 @@ echo "__________________________________________________________________________
 echo "                                                                                   "
 echo "     FIREFOX - essential extensions + clean toolbar layout + related settings      "
 echo "___________________________________________________________________________________"
-# For current and future system users and profiles
-# Create default policies (install minimal set of extensions and theme, enable syncing of your toolbar layout, disable default Mozilla bookmarks)
+# Create default policies (install minimal set of extensions and theme, configure the toolbar layout and allow Firefox Sync to include your toolbar layout when syncing, disable default Mozilla bookmarks)
 # first delete existing profiles
 rm -f -r $HOME/.var/app/org.mozilla.firefox/config/mozilla/firefox/*.default*
 rm -f $HOME/.var/app/org.mozilla.firefox/config/mozilla/firefox/profiles.ini
