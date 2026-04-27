@@ -163,7 +163,6 @@ fc-cache -f -v
 # Remove the downloaded font file
 rm $HOME/Downloads/fonts-office365.tar.xz
 
-
 echo "___________________________________________________________________________________"
 echo "                                                                                   "
 echo "             Simplify folder structure and populate Templates folder               "
@@ -207,7 +206,6 @@ file://$HOME/Music Music
 file://$HOME/Media Media
 EOF
 
-
 echo "___________________________________________________________________________________"
 echo "                                                                                   "
 echo "                   Enable Hibernation and Suspend-then-Hibernate                   "
@@ -242,7 +240,6 @@ sudo tee /etc/systemd/sleep.conf.d/sleep.conf > /dev/null <<EOF
 HibernateDelaySec=75min
 EOF
 
-
 echo "___________________________________________________________________________________"
 echo "                                                                                   "
 echo "                                Other inconveniences                               "
@@ -250,8 +247,6 @@ echo "__________________________________________________________________________
 # Since Gnome 48, App icons are not shown in the systray, because Gnome wants app developers to migrate to gtk4.
 # This is dumb, since that will cost time and effort. Install the library to continue support of app icons in systray for pre-gtk4 apps
 rpm-ostree install -y libayatana-appindicator-gtk3
-
-
 
 # Start Tailscale systray
 # tailscale configure systray --enable-startup=systemd
